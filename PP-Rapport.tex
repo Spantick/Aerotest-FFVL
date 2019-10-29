@@ -1,0 +1,157 @@
+%% LyX 2.3.1-1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\setcounter{secnumdepth}{-2}
+\setcounter{tocdepth}{2}
+\usepackage{babel}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[unicode=true]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+\makeatother
+
+\begin{document}
+\title{FFVL, tests structure}
+\author{pierre@puiseux.name}
+\date{28 octobre 2019}
+\maketitle
+
+\section{Le problème}
+
+trois cas de rupture de suspentes on été relevés sur un parapente
+biplace de marque Supair, modèle Sora2-38 (ou bien Sora2-42 ?). Ces
+voiles ont subit un test structure chez \href{https://para-test.com/}{Air Turquoise}.
+
+Ce document tente de répondre à la question : comment et pourquoi
+cette voile, testée en structure, peut-elle dé-suspenter en vol ? 
+
+Concernant la Sora2-38, aucun enregistrement des test structure, n'est
+disponible sur le site d'Air Turquoise\ref{fig:Sora-2-38,-documents}. 
+
+Concernant la Sora2-42, on trouve une représentation graphique des
+enregistrements au téléchargement\ref{fig:Sora-2-42,-documents},
+à la page 2 du document PG\_1429.2018\_Test\_Sora2\_42.pdf
+
+A defaut de document précis concernant la Sora2-28, l'analyse sera
+menée sur le modèle Sora2-42
+
+\section{Premiers pas}
+\begin{enumerate}
+\item Pour convertir une charge de kilogrammes en Newtons : 
+\[
+x_{N}=x_{kg}\times9.81
+\]
+\item Pour convertir une vitesse de km/h en m/s :
+\[
+x_{m/s}=x_{km/h}\times0.28
+\]
+\end{enumerate}
+
+\subsection{Les données}
+\begin{itemize}
+\item Air Turquoise : 
+\begin{itemize}
+\item le camion est un Dodge, à priori dans les 390 cv,
+\item son poids à vide ($p_{c}$) est $2100\ kg$, soit $p_{c}=20594\ N$
+, le poids max en charge $3000\ kg$. 
+\item Il atteint des charges appliquées à un biplace ($RFA$) de $1700$
+à $2000\ kg$, soit 
+\[
+1733\ N\leq RFA\leq2039\ N
+\]
+\item On suppose que Air Turquoise parvient aux mêmes vitesses que Aérotest,
+soit 
+\[
+V_{max}=28\ m/s
+\]
+\item Longueur de la piste : 
+\[
+L=850\ m
+\]
+\end{itemize}
+\item Aérotest : 
+\begin{itemize}
+\item les vitesses que nous atteignons régulièrement se situent autour de
+$100\pm10\ km/h$, soit 
+\[
+V_{max}=28\ m/s
+\]
+\item Aérotest : parvient à des charges appliquées à un biplace de $2500\ kg$
+soit 
+\[
+RFA=24525\ N
+\]
+\item la piste que nous empruntons en fait 
+\[
+L=1700\ m
+\]
+\end{itemize}
+\end{itemize}
+
+\subsection{Première analyse}
+
+Dans les deux cas (Aérotest et Air Turquoise), les graphiques de montée
+en charge ont une tendance linéaire marquée. Sur cette plage linéaire,
+on peut supposer que l'accélération est également constante(??). Dans
+ce cas, elle vaut ($\Delta L$ est la distance de roulage, on suppose
+que c'est la longueur de la piste moins $50\ m$)
+\[
+\gamma=\frac{\Delta L}{\left(\Delta t\right)^{2}}
+\]
+
+\begin{tabular}{llll}
+\hline 
+Air Turquoise & BiGolden 4 light & Windtech Ru-Bi 2 & Super-Sora 2(42)\tabularnewline
+\hline 
+\noalign{\vskip0.3cm}
+$\Delta F\ \left(N\right)$ & 16677 & 17658.0 & 16677.0\tabularnewline
+$\Delta t\ \left(s)\right)$ & 30 & 30 & 31\tabularnewline
+$\frac{\Delta F}{\Delta t}\ \left(N/s\right)$ & 555.9 & 588.6 & 538.0\tabularnewline
+$\gamma\ \left(m/s^{2}\right)$ & 0.89 & 0.89 & \tabularnewline
+\hline 
+\end{tabular}
+
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\noalign{\vskip0.1cm}
+Modèle & $\Delta F\ \left(N\right)$ & $\frac{\Delta F}{\Delta t}\ \left(N/s\right)$ & $\gamma \left(m/s^2\right)$ & Remarque \tabularnewline
+\noalign{\vskip0.1cm}
+\hline
+Hercules & 22840 & 50.0  & 1600.0 & 5 pics à 2487 N \tabularnewline
+MacPara Trike 42 & 20850 & 48.0  & 1600.0 & 5 pics à 2233 N \tabularnewline
+?? & 21092 & 35.0  & 1600.0 & ?? \tabularnewline
+\hline
+\end{tabular}
+
+si on suppose que l'accélération est, comme la montée en charge, constante,
+elle vaut $\gamma=\frac{\Delta V}{\Delta t}$. Dans les deux cas, 
+
+\part{Annexes}
+
+\subsection{Voile de référence}
+
+\begin{wrapfigure}{o}{0.5\columnwidth}%
+\includegraphics[width=0.8\textwidth]{\string"Air Turquoise/Capture d'écran 2019-10-28 04.49.26\string".png}
+
+\caption{Sora 2-38, les documents disponibles, absence de tests structure\label{fig:Sora-2-38,-documents}}
+\end{wrapfigure}%
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{\string"Air Turquoise/Capture d'écran 2019-10-28 05.24.59\string".png}
+
+\caption{Sora 2-38, les documents disponibles, absence de tests structure\label{fig:Sora-2-42,-documents}}
+\end{figure}
+
+\end{document}

@@ -1,0 +1,17 @@
+Bonsoir Pierre,
+Ci-dessous un ensemble de graphes de tests en charge réalisés ce dernières années.
+En gros ce sont les charges les plus élevées que nous ayons atteint. A ce niveau je peux te certifier (et je pense que tu peux me croire si je te dis que nous sommes à la limite) que le camion est tous juste contrôlable tellement la moindre oscillation de l’aile en roulis génère quasiment une embardée.
+Comme tu pourras le voir sur la vidéo le centre de gravité du camion est au plus bas car il a été fixé au châssis deux masses béton de quasi un m3 chacune à 20 cm du sol.
+
+
+Voici le lien pour visualiser les tests de zoller :
+https://paragliding.rocktheoutdoor.com/tests-et-comparatifs/homologation-parapente-le-deroulement-des-tests-en-charge/
+le pick up qu’il utilize est un dodge V8, à priori dans les 390 cv, et dont le poids à vide est 2100kg et le poids max en charge 3 000 kg.
+Il prétends atteindre des charges appliquées à l’aile de 1700 à 2000kg.. 
+Pour info :  Une Audi R8  de 525 ch et  1, 7 T  fait le 1000 m départ arrêté  en 22.5 s et elle ne tracte pas un parapente…
+
+
+Quelques données comparatives : la piste ou il intervient fait dans les 850 m, celle que nous empruntons en fait 1700.
+
+Les vitesses que nous atteignons régulièrement en correspondance aux graphes ci-dessous se situent autour de 100 km/h +/- 10.
+
