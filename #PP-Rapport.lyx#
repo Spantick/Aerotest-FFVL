@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin "/Users/puiseux/Google Drive/Aerotest-FFVL/"
-\textclass article
+\textclass extreport
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -30,9 +30,18 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref false
-\papersize default
-\use_geometry false
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref slide
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -57,6 +66,10 @@
 \shortcut idx
 \color #008000
 \end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1.5cm
+\bottommargin 2cm
 \secnumdepth -2
 \tocdepth 2
 \paragraph_separation indent
@@ -66,7 +79,7 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 1
+\papersides 2
 \paperpagestyle default
 \tracking_changes false
 \output_changes false
@@ -95,7 +108,7 @@ Le problème
 
 \begin_layout Standard
 Trois cas de rupture de suspentes on été relevés sur un parapente biplace
- de marque Supair, modèle Sora2 (38 ou bien 42 ?).
+ de marque Supair, modèle Sora2 (38 ou bien 42?).
  
 \end_layout
 
@@ -113,15 +126,58 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Ce document tente de répondre à la question : comment et pourquoi cette
- voile, testée en structure, peut-elle dé-suspenter en vol ? 
+Ce document tente de répondre à la question: comment et pourquoi cette voile,
+ testée en structure, peut-elle dé-suspenter en vol? 
 \end_layout
 
 \begin_layout Standard
-Concernant la Sora2-38, aucun enregistrement des test structure, n'est disponibl
-e sur le site d'Air Turquoise
+Deux hypothèses seront examinées conjointement: 
+\end_layout
+
+\begin_layout Enumerate
+la norme et le protocole (cf 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand nameref
+reference "Protocole"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) de tests structure actuels ne sont pas (plus) adaptés aux modes de pilotage,
+ de conception et de confection actuelles;
+\end_layout
+
+\begin_layout Enumerate
+le protocole est adapté, mais Air Turquoise triche avec ce protocole.
+\end_layout
+
+\begin_layout Standard
+Concernant la Sora2-42, on trouve une représentation graphique des enregistremen
+ts dans le rapport de test structure (voir 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "rapport Sora2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Concernant la Sora2-38, aucun enregistrement des tests structure, n'est
+ disponible sur le site d'Air Turquoise
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+ (voir copie d'écran
+\begin_inset CommandInset ref
+LatexCommand labelonly
 reference "fig:Sora-2-38,-documents"
 plural "false"
 caps "false"
@@ -129,44 +185,38 @@ noprefix "false"
 
 \end_inset
 
+)
+\end_layout
+
+\end_inset
+
 .
- 
-\end_layout
-
-\begin_layout Standard
-Concernant la Sora2-42, on trouve une représentation graphique des enregistremen
-ts au téléchargement
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sora-2-42,-documents"
-plural "false"
-caps "false"
-noprefix "false"
-
+ Vincent Teulier me dit que le succès de la grande taille (
+\begin_inset Formula $42\ m^{2}$
 \end_inset
 
-, à la page 2 du document 
-\begin_inset CommandInset href
-LatexCommand href
-name "PG_1429.2018_Test_Sora2_42.pdf"
-target "PG_1429.2018_Test_Sora2_42.pdf"
-type "file:"
-literal "false"
-
+ ) qualifie automatiquement la petite taille (
+\begin_inset Formula $38\ m^{2}$
 \end_inset
 
+).
+\begin_inset Note Note
+status collapsed
 
-\end_layout
-
-\begin_layout Standard
-A defaut de document précis concernant la Sora2-28, l'analyse sera menée
+\begin_layout Plain Layout
+A defaut de document précis concernant la Sora2-38, l'analyse sera menée
  sur le modèle Sora2-42.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 D'autres voiles biplaces ont été choisie un peu au hasard, chez Aérotest
- et Air Turquoise, pour valider les calculs, et vérifier qu'il n'y a pas
- d'anomalie flagrante.
+ et Air Turquoise, pour valider les calculs, et comparer les protocoles
+ de test entre ces deux intervenants.
 \end_layout
 
 \begin_layout Section
@@ -207,7 +257,7 @@ Air Turquoise :
 
 \begin_deeper
 \begin_layout Itemize
-le camion est un Dodge, à priori dans les 390 cv,
+le camion est un Dodge, à priori dans les 390 cv, 
 \end_layout
 
 \begin_layout Itemize
@@ -232,30 +282,23 @@ son poids à vide (
 \end_layout
 
 \begin_layout Itemize
-Il atteint des charges appliquées à un biplace (
-\begin_inset Formula $F_{max}$
+lesté à l'arrière (
+\begin_inset Formula $1000\ kg$
 \end_inset
 
-) de 
-\begin_inset Formula $1700$
-\end_inset
-
- à 
-\begin_inset Formula $2000\ kg$
-\end_inset
-
-, soit 
-\begin_inset Formula 
-\[
-1733\ N\leq F_{max}\leq2039\ N
-\]
-
-\end_inset
-
-
+) ?
 \end_layout
 
 \begin_layout Itemize
+Il atteint des charges appliquées à un biplace 
+\begin_inset Formula $F_{max}\sim2000\ kg$
+\end_inset
+
+, 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 On suppose que Air Turquoise parvient aux mêmes vitesses que Aérotest, soit
  
 \begin_inset Formula 
@@ -268,16 +311,17 @@ V_{max}=28\ m/s
 
 \end_layout
 
-\begin_layout Itemize
-Longueur de la piste : 
-\begin_inset Formula 
-\[
-L=850\ m
-\]
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+la longueur de la piste est 
+\begin_inset Formula $L\sim850\ m$
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
@@ -287,47 +331,33 @@ Aérotest :
 
 \begin_deeper
 \begin_layout Itemize
+le camion pèse 12 Tonnes, centre de g bas, repartition 1/3 moteur, gueuses
+ a l'ar.
+ (5 tonnes) 
+\end_layout
+
+\begin_layout Itemize
 les vitesses atteintes se situent autour de 
-\begin_inset Formula $100\pm10\ km/h$
+\begin_inset Formula $V_{max}\sim100\ km/h$
 \end_inset
 
-, soit 
-\begin_inset Formula 
-\[
-V_{max}=28\ m/s
-\]
-
-\end_inset
-
-
+, 
 \end_layout
 
 \begin_layout Itemize
 Aérotest : pour les biplaces, on atteint des charges 
-\begin_inset Formula $F_{max}=2500\ kg$
-\end_inset
-
- soit 
-\begin_inset Formula 
-\[
-F_{max}=24525\ N
-\]
-
+\begin_inset Formula $F_{max}\sim2500\ kg$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-la piste de roulage a une longueur de
-\begin_inset Formula 
-\[
-L=1700\ m
-\]
-
+la piste de roulage a une longueur de 
+\begin_inset Formula $L=1700\ m$
 \end_inset
 
-
+.
 \end_layout
 
 \end_deeper
@@ -336,15 +366,37 @@ Première analyse
 \end_layout
 
 \begin_layout Standard
-On constate immédiatement, à la lecture des compte-rendus de test, que les
- charges 
+On constate à la lecture des compte-rendus de test, que les charges 
 \begin_inset Formula $F_{max}$
 \end_inset
 
- atteintes ne sont pas du tout les mêmes chez Aerotest et chez Air Turquoise.
+ atteintes ne sont pas les mêmes chez Aerotest et chez Air Turquoise.
+ Voir le 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "Protocole"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Chez Aérotest, les deux règles sont satisfaites (5 pics > 10g et 3s > 8g),
+\end_layout
+
+\begin_layout Itemize
+chez Air Turquoise seule la règle des 3s > 8g est satisfaite.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Les PV d'Air Turquoise font état d'une charge 
 \begin_inset Formula $F_{max}$
 \end_inset
@@ -354,9 +406,31 @@ Les PV d'Air Turquoise font état d'une charge
  N).
  Il faudrait relire précisément la norme pour élucider cette différence
  d'interprétation entre les deux testeurs.
+ 
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Le protocole Air Turquoise est décrit dans le 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "Protocole"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 Dans les deux cas (Aérotest et Air Turquoise), les graphiques de montée
  en charge ont une tendance linéaire marquée.
  Sur cette plage linéaire, on peut supposer que la vitesse croît également
@@ -390,18 +464,7 @@ Dans les deux cas (Aérotest et Air Turquoise), les graphiques de montée
 \end_layout
 
 \begin_layout Standard
-Dans ce cas, la vitesse atteinte est 
-\begin_inset Formula 
-\[
-V_{max}=\frac{L}{t_{max}}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+Dans ce cas, la vitesse atteinte est
 \begin_inset Foot
 status collapsed
 
@@ -416,6 +479,14 @@ La formule exacte tenant compte de fluctuations de
 
 
 \end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+V_{max}=\frac{L}{t_{max}}
+\]
 
 \end_inset
 
@@ -1092,7 +1163,7 @@ Super-Sora 2(42)
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1168,21 +1239,21 @@ hline
 
 \begin_layout Plain Layout
 
-BiGolden 4 light & 16797 & 30.0  & 0.8 & 90.0 & requis à 10 g : 20976.39 N 
+BiGolden 4 light & 16797 & 30.0  & 0.8 & 90.0 & 3s à 8g  
 \backslash
 tabularnewline
 \end_layout
 
 \begin_layout Plain Layout
 
-Windtech Ru-Bi 2 & 17740 & 29.0  & 0.9 & 93.1 & requis à 10 g : 22154.09 N 
+Windtech Ru-Bi 2 & 17740 & 29.0  & 0.9 & 93.1 & 3s à 8g  
 \backslash
 tabularnewline
 \end_layout
 
 \begin_layout Plain Layout
 
-Supair Sora 2 42 & 17361 & 31.0  & 0.8 & 87.1 & requis à 10 g : 21676.96 N 
+Supair Sora 2 42 & 17361 & 31.0  & 0.8 & 87.1 & 3s à 8g  
 \backslash
 tabularnewline
 \end_layout
@@ -1314,14 +1385,14 @@ hline
 
 \begin_layout Plain Layout
 
-Hercules & 22840 & 50.0  & 0.6 & 115.2 & 5 pics à 2487 N 
+Hercules & 22840 & 50.0  & 0.6 & 115.2 & 3s à 8g et 5 pics à 10g 
 \backslash
 tabularnewline
 \end_layout
 
 \begin_layout Plain Layout
 
-MacPara Trike 42 & 20850 & 48.0  & 0.7 & 120.0 & 5 pics à 2233 N 
+MacPara Trike 42 & 20850 & 48.0  & 0.7 & 120.0 & 3s à 8g et 5 pics à 10g 
 \backslash
 tabularnewline
 \end_layout
@@ -1375,8 +1446,7 @@ Test en structure chez Aerotest
 \end_layout
 
 \begin_layout Standard
-La lecture de ces tables n'évoque aucune autre anomalie que celle évoquée
- ci-dessus.
+La lecture de ces tables n'évoque aucune anomalie.
 \end_layout
 
 \begin_layout Section
@@ -1388,7 +1458,7 @@ En faisant l'hypothèse que l'accélération
 \begin_inset Formula $\gamma$
 \end_inset
 
- est constante, en vertue de la loi fondamentale de la dynamique Newtonienne,
+ est constante, en vertu de la loi fondamentale de la dynamique Newtonienne,
  la voile est soumise à une force 
 \begin_inset Formula $F_{\gamma}=m\gamma$
 \end_inset
@@ -1401,12 +1471,12 @@ En faisant l'hypothèse que l'accélération
 \end_layout
 
 \begin_layout Standard
-En calculant le volume délimité par le tissu, on peut évaluer la masse d'air
- emmagasinée à 
+Le calcul du volume délimité par le tissu, permet d'évaluer la masse d'air
+ emmagasinée dans un biplace à 
 \begin_inset Formula $m_{a}\sim10\ kg$
 \end_inset
 
- et pour la voilure 
+ et pour la voilure seule 
 \begin_inset Formula $m_{v}\sim7\ kg$
 \end_inset
 
@@ -1414,30 +1484,173 @@ En calculant le volume délimité par le tissu, on peut évaluer la masse d'air
 \end_layout
 
 \begin_layout Standard
-La force dûe à l'accélération est de l'ordre de grandeur de 
-\begin_inset Formula $F_{\gamma}\sim17\ m/s^2$
+La force dûe à l'accélération est donc de l'ordre de grandeur de 
+\begin_inset Formula $F_{\gamma}\sim15\ N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cette force est à rajouter au bilan des forces extérieures s'appliquant
+ sur le parapente, en sus de la résultante des forces aérodynamiques, de
+ la réaction du point d'attache au camion et des diverses sources de traînée
+ et de portance.
+ Un algorithme existe, qui permet de calculer les paramètres de l'équilibre
+ d'un parapente dans une soufflerie, à une vitesse constante 
+\begin_inset Formula $V_{\infty}$
+\end_inset
+
+.
+ En modifiant légèrement cet algorithme de manière a prendre en compte cette
+ nouvelle force, nous allons évaluer les caractéristiques de vol du parapente
+ en test structure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
 \end_inset
 
 
 \end_layout
 
-\begin_layout Part
+\begin_layout Section
+\start_of_appendix
 Annexes
 \end_layout
 
 \begin_layout Subsection
-Voile de référence
+protocole de test en charge
+\begin_inset CommandInset label
+LatexCommand label
+name "Protocole"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement o
-overhang 0col%
-width "50col%"
+(source : 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "rapport Sora2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+En résumé, le protocole chez Air Turquoise prévoit la validation dès qu'un
+ des objectifs suivants est atteint (1g correspond au poids total en vol
+ maximum recommandé par le constructeur) :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+un pic à 8g stabilisé pendant 3s consécutives,
+\end_layout
+
+\begin_layout Enumerate
+cinq pics à 10g, séparés d'au maximum 0.3s.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plus précisément : 
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\shape italic
+The test specimen (sample) is attached to the electronic sensors on the
+ tow vehicle.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+A controller is positioned on the tow vehicle in order to operate the paraglider
+ control lines to stabilize the wing.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+The speed of the vehicle is increased as gradually as possible, enabling
+ the controller to obtain satisfactory stabilisation of the flight path
+ of the paraglider.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+When the paraglider has stabilized, the speed is increased gradually until
+ either: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\shape italic
+the measured load exceeds a load factor of eight times the maximum total
+ weight in flight recommended by the manufacturer, for a minimum cumulative
+ duration of 3 s; 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+five peaks separated by at least 0,3 s are obtained above ten times the
+ maximum total weight in flight recommended by the manufacturer, in one
+ run.
+\end_layout
+
+\end_deeper
+\begin_layout Quotation
+
+\shape italic
+The calculated value include the value minus the uncertainty.
+ The uncertainty stated is the expanded uncertainty obtained by multiplying
+ the standard uncertainty by the coverage factor k = 2.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+The value of the measurand lies within the assigned range of values with
+ a probability of 95%.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+liens
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename AirTurquoise/Capture d'écran 2019-10-28 04.49.26.png
 	lyxscale 50
@@ -1452,7 +1665,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sora 2-38, les documents disponibles, absence de tests structure
+Sora 2-38, tests structure indisponibles
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sora-2-38,-documents"
@@ -1472,13 +1685,16 @@ name "fig:Sora-2-38,-documents"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename AirTurquoise/Capture d'écran 2019-10-28 05.24.59.png
 	lyxscale 50
@@ -1493,7 +1709,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sora 2-38, les documents disponibles, absence de tests structure
+Sora 2-42, présence de tests structure
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sora-2-42,-documents"
@@ -1507,6 +1723,49 @@ name "fig:Sora-2-42,-documents"
 
 
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Les rapports d'homologation de Air Turquoise"
+target "https://para-test.com/reports"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "rapports AT"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Sora2 42 : rapport d'homologation tests structure"
+target "https://para-test.com/reports/item/download/27381_bf10a59853329a53f90f78885eba6284"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "rapport Sora2"
 
 \end_inset
 
