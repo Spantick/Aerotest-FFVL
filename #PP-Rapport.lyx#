@@ -318,7 +318,7 @@ V_{max}=28\ m/s
 
 \begin_layout Itemize
 la longueur de la piste est 
-\begin_inset Formula $L\sim850\ m$
+\begin_inset Formula $L\sim780\ m$
 \end_inset
 
 .
@@ -1163,7 +1163,7 @@ Super-Sora 2(42)
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1309,7 +1309,7 @@ Test en structure chez Air Turquoise
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1454,6 +1454,29 @@ Etude aérodynamique
 \end_layout
 
 \begin_layout Standard
+Le pilotage des parapente s'est considérablement amélioré et affiné depuis
+ l'élaboration de la norme de certification.
+ En particulier depuis la création du protocole de test en charge.
+ Or les nouveaux modes de pilotage, des biplaces comme des voiles solos,
+ banalisent des manœuvres comme les wing-over appuyés, 360 engagés, voire
+ tumbling, vrille à plat ou décrochages dynamiques.
+ Il est fréquent qu'un client réclame au biplaceur professionnel les sensations
+ fortes associées à des wing-over ou 360 engagés.
+ Lors de ces manœuvres un peu extrêmes, l'agilité des pilotes permet que
+ la voilure subisse des accélérations importantes, et flirte avec des incidences
+ très faibles ou très fortes (proches de la fermeture ou du décrochage).
+ Pour ce qui est des incidences très faibles (proches de la fermeture),
+ on sait que les suspentes avant sont fortement sollicitées.
+ Or le protocole d'homologation en structure ne permet pas d'approcher ces
+ incidences extrêmes.
+ Il est donc important de savoir quelle plage d'incidence est testée lors
+ d'une session de tests, et de connaître la répartition de charge dans le
+ suspentage.
+ Une simulation numérique, même approximative, doit répondre à ces questions.
+ C'est l'objet des lignes qui suivent.
+\end_layout
+
+\begin_layout Standard
 En faisant l'hypothèse que l'accélération 
 \begin_inset Formula $\gamma$
 \end_inset
@@ -1502,7 +1525,7 @@ Cette force est à rajouter au bilan des forces extérieures s'appliquant
 \end_inset
 
 .
- En modifiant légèrement cet algorithme de manière a prendre en compte cette
+ En modifiant légèrement cet algorithme de manière à prendre en compte cette
  nouvelle force, nous allons évaluer les caractéristiques de vol du parapente
  en test structure.
 \end_layout

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 #coding:utf-8
+import sys
 class A(object):
     def __init__():
         pass
@@ -104,6 +105,114 @@ def toLaTeX(boite, bis) :
     
     lines.append("\\end{tabular}")
     return '\n'.join(lines)
+
+def run2() :
+    D = dict(
+        Turquoise = [900.00,
+            #(nom, t0,t1,t2,t3,fmax (N))
+            [('BiGolden 4 light', 43,72,77,83,16797.),
+            ('Windtech Ru-Bi 2', 48,78,82,92,17739.59, ),
+            ('Supair Sora 2',    18,43,51,57,17360.56),]
+                    ],
+        Aérotest = [1700.00,
+            [('Hercules',         6,54,61,63,22840),
+            ('MacPara Trike 42', 7,51,56,58,20850),
+            ('Stewart',          0,27,34,35,1760*9.81),
+            ('Stewart-DGAC',     7,27,34,35,2500*9.81),
+            ('Shuttle',         15,49,59,60,2500*9.81),]
+                    ]
+            )
+    def Vmax(t1,t2,t3,L) : 
+        return ms2Kmh(2*L/(-t1+t2+t3))
+    
+    def toText(boite, L, bis) :
+        print ("\n"+(len(boite)*'=') + '\n' + "%s"%boite+'\n' + len(boite)*'=' + '\n')
+
+        hline = 4*' '+79*'-'
+        print(hline)
+        print('    Modèle               : t1   : t2   : t3   : Vmax    : Fmax    : 𝛾1    : 𝛾3    :')
+        print(hline)
+        for bi in bis : 
+            name, t0, t1, t2, t3, fmax = bi
+            t1 -= t0
+            t2 -= t0
+            t3 -= t0
+            vmax = Vmax(t1,t2,t3,L)
+            gam1 = vmax/t1
+            gam3 = -vmax/(t3-t2)
+            print('    %-20s :'%name, end='')#---------------------
+            print(" %-4.0f :"%(t1),end='')
+            print(" %-4.0f :"%(t2),end='')
+            print(" %-4.0f :"%(t3),end='')
+            print(" %-7.1f :"%(vmax),end='')
+            print(" %-7.1f :"%(fmax),end='')
+            print(" %-5.1f :"%(gam1),end='')
+            print(" %-5.1f :"%(gam3),end='')
+            print()
+        print(hline)
+    
+    for boite, (L,bis) in D.items() : 
+        toText(boite, L,    bis)
+    print()
+    print()
+    # for boite, bis in D.items() :
+    #     print() 
+    #     print() 
+    #     print(toLaTeX(boite, bis))
+
+def run3() :
+    D = dict(
+        Turquoise = [900.00,
+            #(nom, t0,t1,t2,t3,fmax (N))
+            [('BiGolden 4 light', 43,72,77,16797.),
+            ('Windtech Ru-Bi 2', 48,78,82,17739.59, ),
+            ('Supair Sora 2',    18,43,51,17360.56),]
+                    ],
+        Aérotest = [1700.00,
+            [('Hercules',         6,54,61,22840),
+            ('MacPara Trike 42', 7,51,56,20850),
+            ('Stewart',          0,27,34,1760*9.81),
+            ('Stewart-DGAC',     7,27,34,2500*9.81),
+            ('Shuttle',         15,49,59,2500*9.81),]
+                    ]
+            )
+    def Vmax(t1,t2,L) : 
+        return ms2Kmh(L/(t2-t1/2))/2.5
+    
+    def toText(boite, L, bis) :
+        print ("\n"+(len(boite)*'=') + '\n' + "%s"%boite+'\n' + len(boite)*'=' + '\n')
+
+        hline = 4*' '+71*'-'
+        print(hline)
+        print('    Modèle               : t1   : t2   : Vmax    : Fmax    : 𝛾1    :')
+        print(hline)
+        for bi in bis : 
+            name, t0, t1, t2, fmax = bi
+            t1 -= t0
+            t2 -= t0
+            # t3 -= t0
+            vmax = Vmax(t1,t2,L)
+            gam1 = vmax/t1
+            # gam3 = -vmax/(t3-t2)
+            print('    %-20s :'%name, end='')#---------------------
+            print(" %-4.0f :"%(t1),end='')
+            print(" %-4.0f :"%(t2),end='')
+            # print(" %-4.0f :"%(t3),end='')
+            print(" %-7.1f :"%(vmax),end='')
+            print(" %-7.1f :"%(fmax),end='')
+            print(" %-5.1f :"%(gam1),end='')
+            # print(" %-5.1f :"%(gam3),end='')
+            print()
+        print(hline)
+    
+    for boite, (L,bis) in D.items() : 
+        toText(boite, L,    bis)
+    print()
+    print()
+    # for boite, bis in D.items() :
+    #     print() 
+    #     print() 
+    #     print(toLaTeX(boite, bis))
 
 if __name__ == '__main__' :
     pass
