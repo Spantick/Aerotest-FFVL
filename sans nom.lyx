@@ -1,0 +1,1083 @@
+#LyX file created by tex2lyx 2.3
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /Users/puiseux/Google Drive/Aerotest-FFVL/
+\textclass article
+\begin_preamble
+
+
+%% Created with wxMaxima 19.10.0
+
+
+
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{grffile}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+\usepackage{animate}% This package is required because the wxMaxima configuration option
+                      % "Export animations to TeX" was enabled when this file was generated.
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding utf8
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 1
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i149) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ assume(t
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ensuremath{>}
+\end_layout
+
+\end_inset
+
+=0,t_1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ensuremath{>}
+\end_layout
+
+\end_inset
+
+0,t_2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ensuremath{>}
+\end_layout
+
+\end_inset
+
+t_1,t_3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+ensuremath{>}
+\end_layout
+
+\end_inset
+
+t_2); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o149} 
+[\mathit{redundant},\mathit{redundant},\mathit{redundant},\mathit{redundant}]\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i152) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ V_1(t):=V_m/sqrt(t_1)*sqrt(t);V_2(t):=V_m;V_3(t):=V_m*sqrt(t_3-t)/sqrt(t_3-t_2); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o150} 
+{V_1}(t):=\frac{{V_m}}{\sqrt{{t_1}}} \sqrt{t}\mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o151} 
+{V_2}(t):={V_m}\mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o152} 
+{V_3}(t):=\frac{{V_m} \sqrt{{t_3}-t}}{\sqrt{{t_3}-{t_2}}}\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i209) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ is (V_1(0)=0 andV_1(t_1)=V_2(t_1) andV_2(t_1)=V_m andV_2(t_2)=V_m andV_2(t_1)=V_2(t_2) andV_2(t_2)=V_3(t_2) andV_3(t_3)=0); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o209} 
+\mbox{true}\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i237) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ X_1(t):=integrate(V_1(s),s,0,t);X_2(t):=X_1(t_1)+integrate(V_2(s),s,t_1,t);X_3(t):=X_2(t_2)+integrate(V_3(s),s,t_2,t); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o235} 
+{X_1}(t):=\int_{0}^{t}{\left. {V_1}(s)ds\right.}\mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o236} 
+{X_2}(t):={X_1}\left( {t_1}\right) +\int_{{t_1}}^{t}{\left. {V_2}(s)ds\right.}\mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o237} 
+{X_3}(t):={X_2}\left( {t_2}\right) +\int_{{t_2}}^{t}{\left. {V_3}(s)ds\right.}\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i240) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ X_1(t);X_2(t);X_3(t); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o238} 
+\frac{2 {V_m} {{t}^{\frac{3}{2}}}}{3 \sqrt{{t_1}}}\mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o239} 
+\frac{2 {V_m} {t_1}}{3}+{V_m} \left( t-{t_1}\right) \mbox{}\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[\tag{\% o240} 
+\frac{{V_m} \left( \frac{\sqrt{{t_3}-{t_2}} \left( 2 {t_3}-2 {t_2}\right) }{3}-\frac{\sqrt{{t_3}-t} \left( 2 {t_3}-2 t\right) }{3}\right) }{\sqrt{{t_3}-{t_2}}}+{V_m} \left( {t_2}-{t_1}\right) +\frac{2 {V_m} {t_1}}{3}\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% INPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "4em"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{red}
+\end_layout
+
+\end_inset
+
+
+\series bold
+(% i242) 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "l"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100text%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+
+\begin_layout Plain Layout
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+color{blue}
+\end_layout
+
+\end_inset
+
+ factor(X_3(t_3)); 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%% OUTPUT:
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula \[\displaystyle \tag{\% o242} 
+\frac{{V_m} \left( 2 {t_3}+{t_2}-{t_1}\right) }{3}\mbox{}
+\]
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%%%%%%%%%%%%%%%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
