@@ -4,7 +4,7 @@
 \begin_header
 \save_transient_properties true
 \origin "/Users/puiseux/Google Drive/Aerotest-FFVL/"
-\textclass extreport
+\textclass paper
 \begin_preamble
 \usepackage{iftex}
 \ifPDFTeX
@@ -87,7 +87,7 @@
 \topmargin 2cm
 \rightmargin 1.5cm
 \bottommargin 2cm
-\secnumdepth -2
+\secnumdepth 3
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
@@ -264,7 +264,7 @@ x_{m/s}=x_{km/h}\times0.28
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Les données
 \end_layout
 
@@ -535,7 +535,7 @@ Le calcul du volume délimité par le tissu, permet d'évaluer la masse d'air
 \end_layout
 
 \begin_layout Standard
-La force dûe à l'accélération est donc de l'ordre de grandeur de 
+La force due à l'accélération est donc de l'ordre de grandeur de 
 \begin_inset Formula $F_{\gamma}\sim15\ N$
 \end_inset
 
@@ -565,7 +565,23 @@ Vitesses atteintes
 \begin_layout Standard
 Les graphiques des tests en charge donnent la charge mesurée (ordonnée)
  en fonction du temps de roulage (abscisse).
- 
+ Il semble possible, à partir de ces graphiques, d'évaluer la vitesse maximale
+ (
+\begin_inset Formula $V_{m}$
+\end_inset
+
+) atteinte durant un run.
+ Voir 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "calcul Vmax"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -575,133 +591,18 @@ Les graphiques des tests en charge donnent la charge mesurée (ordonnée)
 
 \end_layout
 
-\begin_layout Section
-\start_of_appendix
+\begin_layout Section*
 Annexes
 \end_layout
 
 \begin_layout Subsection
-protocole de test en charge
 \begin_inset CommandInset label
 LatexCommand label
-name "Protocole"
+name "calcul Vmax"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-(source : 
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "rapport Sora2"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Itemize
-En résumé, le protocole chez Air Turquoise prévoit la validation dès qu'un
- des objectifs suivants est atteint (1g correspond au poids total en vol
- maximum recommandé par le constructeur) :
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-un pic à 8g stabilisé pendant 3s consécutives,
-\end_layout
-
-\begin_layout Enumerate
-cinq pics à 10g, séparés d'au maximum 0.3s.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Plus précisément : 
-\end_layout
-
-\begin_deeper
-\begin_layout Quotation
-
-\shape italic
-The test specimen (sample) is attached to the electronic sensors on the
- tow vehicle.
- 
-\end_layout
-
-\begin_layout Quotation
-
-\shape italic
-A controller is positioned on the tow vehicle in order to operate the paraglider
- control lines to stabilize the wing.
- 
-\end_layout
-
-\begin_layout Quotation
-
-\shape italic
-The speed of the vehicle is increased as gradually as possible, enabling
- the controller to obtain satisfactory stabilisation of the flight path
- of the paraglider.
- 
-\end_layout
-
-\begin_layout Quotation
-
-\shape italic
-When the paraglider has stabilized, the speed is increased gradually until
- either: 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\shape italic
-the measured load exceeds a load factor of eight times the maximum total
- weight in flight recommended by the manufacturer, for a minimum cumulative
- duration of 3 s; 
-\end_layout
-
-\begin_layout Itemize
-
-\shape italic
-five peaks separated by at least 0,3 s are obtained above ten times the
- maximum total weight in flight recommended by the manufacturer, in one
- run.
-\end_layout
-
-\end_deeper
-\begin_layout Quotation
-
-\shape italic
-The calculated value include the value minus the uncertainty.
- The uncertainty stated is the expanded uncertainty obtained by multiplying
- the standard uncertainty by the coverage factor k = 2.
- 
-\end_layout
-
-\begin_layout Quotation
-
-\shape italic
-The value of the measurand lies within the assigned range of values with
- a probability of 95%.
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
 Evaluation de la vitesse maximale
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:calcul Vmax"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -709,7 +610,7 @@ Dans les deux cas (Aérotest et Air Turquoise), les graphiques de montée
  en charge ont une tendance linéaire marquée.
  
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Sur cette plage linéaire, on peut supposer que la vitesse croît également
@@ -1936,6 +1837,7 @@ V_{m}\times\sqrt{\frac{t_{3}-t}{t_{3}-t_{2}}} & \text{ si }t\in\left[t_{2},t_{3}
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1967,10 +1869,6 @@ name "fig:Approximation-de-la"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2019,6 +1917,119 @@ X\left(t_{3}\right)=\frac{V_{m}\left(2t_{3}+t_{2}-t_{1}\right)}{3}\label{eq:dist
  On obtient les résultats suivants : 
 \end_layout
 
+\begin_layout Subsection
+protocole de test en charge
+\begin_inset CommandInset label
+LatexCommand label
+name "Protocole"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(source : 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "rapport Sora2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+En résumé, le protocole chez Air Turquoise prévoit la validation dès qu'un
+ des objectifs suivants est atteint (1g correspond au poids total en vol
+ maximum recommandé par le constructeur) :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+un pic à 8g stabilisé pendant 3s consécutives,
+\end_layout
+
+\begin_layout Enumerate
+cinq pics à 10g, séparés d'au maximum 0.3s.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Plus précisément : 
+\end_layout
+
+\begin_deeper
+\begin_layout Quotation
+
+\shape italic
+The test specimen (sample) is attached to the electronic sensors on the
+ tow vehicle.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+A controller is positioned on the tow vehicle in order to operate the paraglider
+ control lines to stabilize the wing.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+The speed of the vehicle is increased as gradually as possible, enabling
+ the controller to obtain satisfactory stabilisation of the flight path
+ of the paraglider.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+When the paraglider has stabilized, the speed is increased gradually until
+ either: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\shape italic
+the measured load exceeds a load factor of eight times the maximum total
+ weight in flight recommended by the manufacturer, for a minimum cumulative
+ duration of 3 s; 
+\end_layout
+
+\begin_layout Itemize
+
+\shape italic
+five peaks separated by at least 0,3 s are obtained above ten times the
+ maximum total weight in flight recommended by the manufacturer, in one
+ run.
+\end_layout
+
+\end_deeper
+\begin_layout Quotation
+
+\shape italic
+The calculated value include the value minus the uncertainty.
+ The uncertainty stated is the expanded uncertainty obtained by multiplying
+ the standard uncertainty by the coverage factor k = 2.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+The value of the measurand lies within the assigned range of values with
+ a probability of 95%.
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
 Feuille de calcul Maxima pour le calcul des trajectoires
 \begin_inset CommandInset label

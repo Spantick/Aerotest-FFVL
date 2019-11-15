@@ -1,0 +1,704 @@
+\documentclass[fleqn]{article}
+
+%% Created with wxMaxima 19.10.0
+
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{iftex}
+\ifPDFTeX
+  % PDFLaTeX or LaTeX 
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \DeclareUnicodeCharacter{00B5}{\ensuremath{\mu}}
+\else
+  %  XeLaTeX or LuaLaTeX
+  \usepackage{fontspec}
+\fi
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{grffile}
+\usepackage{ifthen}
+\newsavebox{\picturebox}
+\newlength{\pictureboxwidth}
+\newlength{\pictureboxheight}
+\newcommand{\includeimage}[1]{
+    \savebox{\picturebox}{\includegraphics{#1}}
+    \settoheight{\pictureboxheight}{\usebox{\picturebox}}
+    \settowidth{\pictureboxwidth}{\usebox{\picturebox}}
+    \ifthenelse{\lengthtest{\pictureboxwidth > .95\linewidth}}
+    {
+        \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+    }
+    {
+        \ifthenelse{\lengthtest{\pictureboxheight>.80\textheight}}
+        {
+            \includegraphics[width=.95\linewidth,height=.80\textheight,keepaspectratio]{#1}
+            
+        }
+        {
+            \includegraphics{#1}
+        }
+    }
+}
+\newlength{\thislabelwidth}
+\DeclareMathOperator{\abs}{abs}
+\usepackage{animate} % This package is required because the wxMaxima configuration option
+                      % "Export animations to TeX" was enabled when this file was generated.
+
+\definecolor{labelcolor}{RGB}{100,0,0}
+
+\begin{document}
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i1) 
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+kill(all);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o0} 
+\mathit{done}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\section{Calcul formel}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*A est l'ampitude relative des oscillations : F\_max*A\ensuremath{\sim }4000N, doit être à peu pres constant, à lire sur les diagrammesles k\_i sont des entiers de sorte que au bout des intervalles les F\_i  et les V\_i se raccordent*/;
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i1)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+parametres:[k\_1=20,k\_2=10,k\_3=5,A=0.2];
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{parametres}
+[{k_1}=20,{k_2}=10,{k_3}=5,A=0.2]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i17)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+times:[t\_1=43-18,t\_2=51-18,t\_3=57-18];
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{times}
+[{t_1}=25,{t_2}=33,{t_3}=39]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i4)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+declare (k\_1, integer);declare(k\_2,integer);declare(k\_3,integer);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o2} 
+\mathit{done}\mbox{}\]
+
+\[\tag{\% o3} 
+\mathit{done}\mbox{}\]
+
+\[\tag{\% o4} 
+\mathit{done}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i5)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+assume(t\ensuremath{>}=0,t\_1\ensuremath{>}0,t\_2\ensuremath{>}t\_1,t\_3\ensuremath{>}t\_2);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o5} 
+[t\mbox{>  =}0,{t_1}\mbox{>  }0,{t_2}\mbox{>  }{t_1},{t_3}\mbox{>  }{t_2}]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i8)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+V\_1(t):=V\_m*sqrt(t/t\_1+A*sin(2*k\_1*\%pi*(t/t\_1)));V\_2(t):=V\_m*sqrt(1+A*sin(2*k\_2*\%pi*((t-t\_1)/(t\_2-t\_1))));V\_3(t):=V\_m*(sqrt((t\_3-t)/(t\_3-t\_2)+A*sin(2*k\_3*\%pi*((t\_3-t)/(t\_3-t\_2)))));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o6} 
+{V_1}(t):={V_m} \sqrt{\frac{t}{{t_1}}+A \sin{\left( 2 {k_1} \ensuremath{\pi}  \frac{t}{{t_1}}\right) }}\mbox{}\]
+
+\[\tag{\% o7} 
+{V_2}(t):={V_m} \sqrt{1+A \sin{\left( 2 {k_2} \ensuremath{\pi}  \frac{t-{t_1}}{{t_2}-{t_1}}\right) }}\mbox{}\]
+
+\[\tag{\% o8} 
+{V_3}(t):={V_m} \sqrt{\frac{{t_3}-t}{{t_3}-{t_2}}+A \sin{\left( 2 {k_3} \ensuremath{\pi}  \frac{{t_3}-t}{{t_3}-{t_2}}\right) }}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i9)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+is (V\_1(0)=0 andV\_1(t\_1)=V\_2(t\_1) andV\_2(t\_1)=V\_m andV\_2(t\_2)=V\_m andV\_2(t\_1)=V\_2(t\_2) andV\_2(t\_2)=V\_3(t\_2) andV\_3(t\_3)=0);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o9} 
+\mbox{true}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i10)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+X\_1(t):=integrate(V\_1(s),s,0,t);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o10} 
+{X_1}(t):=\int_{0}^{t}{\left. {V_1}(s)ds\right.}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i11)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+X\_2(t):=X\_1(t\_1)+integrate(V\_2(s),s,t\_1,t);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o11} 
+{X_2}(t):={X_1}\left( {t_1}\right) +\int_{{t_1}}^{t}{\left. {V_2}(s)ds\right.}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i12)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+X\_3(t):=X\_2(t\_2)+integrate(V\_3(s),s,t\_2,t);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o12} 
+{X_3}(t):={X_2}\left( {t_2}\right) +\int_{{t_2}}^{t}{\left. {V_3}(s)ds\right.}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i73)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+assume(t\ensuremath{>}0);x\_1(r):=subst([V\_m=1,t=r],subst(times,subst(parametres,X\_1(t))));v\_1(r):=subst([V\_m=1,t=r],subst(times,subst(parametres,V\_1(t))));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o71} 
+[\mathit{redundant}]\mbox{}\]
+
+\[\tag{\% o72} 
+{x_1}(r):=\operatorname{subst}\left( [{V_m}=1,t=r],\operatorname{subst}\left( \mathit{times},\operatorname{subst}\left( \mathit{parametres},{X_1}(t)\right) \right) \right) \mbox{}\]
+
+\[\tag{\% o73} 
+{v_1}(r):=\operatorname{subst}\left( [{V_m}=1,t=r],\operatorname{subst}\left( \mathit{times},\operatorname{subst}\left( \mathit{parametres},{V_1}(t)\right) \right) \right) \mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i82)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+v\_1(r);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o82} 
+\sqrt{0.2 \sin{\left( \frac{8 \ensuremath{\pi}  r}{5}\right) }+\frac{r}{25}}\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i83)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+D:factor(X\_3(t\_3));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{D}
+({V_m} (\sqrt{{t_1}} \int_{{t_2}}^{{t_3}}{\left. \sqrt{\left( A\, {t_3}-A\, {t_2}\right)  \sin{\left( \frac{2 \ensuremath{\pi}  {k_3} \left( {t_3}-s\right) }{{t_3}-{t_2}}\right) }+{t_3}-s}ds\right.}+\sqrt{{t_1}} \int_{{t_1}}^{{t_2}}{\left. \sqrt{1-A \sin{\left( \frac{2 \ensuremath{\pi}  {k_2} \left( {t_1}-s\right) }{{t_2}-{t_1}}\right) }}ds\right.} \sqrt{{t_3}-{t_2}}+\int_{0}^{{t_1}}{\left. \sqrt{A \sin{\left( \frac{2 \ensuremath{\pi}  {k_1} s}{{t_1}}\right) } {t_1}+s}ds\right.} \sqrt{{t_3}-{t_2}}))/(\sqrt{{t_1}} \sqrt{{t_3}-{t_2}})\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i84)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+S:solve(X\_3(t\_3)=d, V\_m);/*Resolution de D=f(V\_m)*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{S}
+[{V_m}=d/(\int_{{t_2}}^{{t_3}}{\left. \sqrt{A \sin{\left( \frac{2 \ensuremath{\pi}  {k_3} {t_3}}{{t_3}-{t_2}}-\frac{2 \ensuremath{\pi}  {k_3} s}{{t_3}-{t_2}}\right) }+\frac{{t_3}}{{t_3}-{t_2}}-\frac{s}{{t_3}-{t_2}}}ds\right.}+\int_{{t_1}}^{{t_2}}{\left. \sqrt{1-A \sin{\left( \frac{2 \ensuremath{\pi}  {k_2} {t_1}}{{t_2}-{t_1}}-\frac{2 \ensuremath{\pi}  {k_2} s}{{t_2}-{t_1}}\right) }}ds\right.}+\int_{0}^{{t_1}}{\left. \sqrt{\frac{s}{{t_1}}+A \sin{\left( \frac{2 \ensuremath{\pi}  {k_1} s}{{t_1}}\right) }}ds\right.})]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*V(x,a,b,c) := subst(c,t\_3,subst(b,t\_2,subst(a,t\_1,subst(x,d,rhs(S)))));*/;
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i88)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+V(x,a,b,c):=substitute([d=x, t\_1=a,t\_2=b,t\_3=c],rhs(S[1]));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o88} 
+\operatorname{V}\left( x,a,b,c\right) :=\operatorname{subst}\left( [d=x,{t_1}=a,{t_2}=b,{t_3}=c],\operatorname{rhs}\left( {S_1}\right) \right) \mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+(\% i89)
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+V(d,t\_1,t\_2,t\_3);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o89} 
+d/(\int_{{t_2}}^{{t_3}}{\left. \sqrt{A \sin{\left( \frac{2 \ensuremath{\pi}  {k_3} {t_3}}{{t_3}-{t_2}}-\frac{2 \ensuremath{\pi}  {k_3} s}{{t_3}-{t_2}}\right) }+\frac{{t_3}}{{t_3}-{t_2}}-\frac{s}{{t_3}-{t_2}}}ds\right.}+\int_{{t_1}}^{{t_2}}{\left. \sqrt{1-A \sin{\left( \frac{2 \ensuremath{\pi}  {k_2} {t_1}}{{t_2}-{t_1}}-\frac{2 \ensuremath{\pi}  {k_2} s}{{t_2}-{t_1}}\right) }}ds\right.}+\int_{0}^{{t_1}}{\left. \sqrt{\frac{s}{{t_1}}+A \sin{\left( \frac{2 \ensuremath{\pi}  {k_1} s}{{t_1}}\right) }}ds\right.})\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{s}
+[{k_1}=20,{k_2}=10,{k_3}=5,A=0.2]\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+subst(s,w(x,a,b,c));
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o35} 
+x/(\int_{b}^{c}{\left. \sqrt{-0.2 \sin{\left( \frac{10 \ensuremath{\pi}  s}{c-b}-\frac{10 \ensuremath{\pi}  c}{c-b}\right) }-\frac{s}{c-b}+\frac{c}{c-b}}ds\right.}+\int_{a}^{b}{\left. \sqrt{0.2 \sin{\left( \frac{20 \ensuremath{\pi}  s}{b-a}-\frac{20 \ensuremath{\pi}  a}{b-a}\right) }+1}ds\right.}+\int_{0}^{a}{\left. \sqrt{0.2 \sin{\left( \frac{40 \ensuremath{\pi}  s}{a}\right) }+\frac{s}{a}}ds\right.})\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+V(x,a,b,c);
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o19} 
+x/(\int_{b}^{c}{\left. \sqrt{-A \sin{\left( \frac{2 \ensuremath{\pi}  {k_3} s}{c-b}-\frac{2 \ensuremath{\pi}  c\, {k_3}}{c-b}\right) }-\frac{s}{c-b}+\frac{c}{c-b}}ds\right.}+\int_{a}^{b}{\left. \sqrt{A \sin{\left( \frac{2 \ensuremath{\pi}  {k_2} s}{b-a}-\frac{2 \ensuremath{\pi}  a\, {k_2}}{b-a}\right) }+1}ds\right.}+\int_{0}^{a}{\left. \sqrt{A \sin{\left( \frac{2 \ensuremath{\pi}  {k_1} s}{a}\right) }+\frac{s}{a}}ds\right.})\mbox{}
+\]
+%%%%%%%%%%%%%%%
+\pagebreak
+
+
+\section{Turquoise}
+
+
+\subsection{Supair Sora 2, 42 m\^{}2}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[18,43,51,57]\$L:800;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{L}
+800\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*VV:V(L,t1-t0,t2-t0,t3-t0);*/;
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*subst(k1,50,VV);*/;
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/;
+\end{minipage}
+
+\noindent%
+
+
+\subsection{Supair Sora 1-41 (2015)}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[10,55,58,62]\$L:800;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{L}
+800\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o28} 
+80.74766355140187\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\subsection{Windtech Ru-Bi 2}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[48,78,82,92]\$L:800\$
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o31} 
+93.91304347826086\mbox{}
+\]
+%%%%%%%%%%%%%%%
+\pagebreak
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+
+\end{minipage}
+
+\noindent%
+
+
+\section{Aérotest}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+L:1700;
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{L}
+1700\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\subsection{Hercules}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[6,56,61,63]\$
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o51} 
+142.3255813953488\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\subsection{MacPara Trike 42}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[7,51,56,58]\$
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o40} 
+151.7355371900827\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\subsection{Stewart}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[0,27,34,35]\$
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+%%% OUTPUT:
+\[\displaystyle \tag{\% o42} 
+238.4415584415584\mbox{}
+\]
+%%%%%%%%%%%%%%%
+
+\subsection{Stewart-DGAC}
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+[t0,t1,t2,t3]:[7,27,34,35]\$
+\end{minipage}
+
+\noindent%
+
+
+
+\noindent
+%%%%%%%%%%%%%%%
+%%% INPUT:
+\begin{minipage}[t]{4em}\color{red}\bfseries
+ \ensuremath{\longrightarrow}  
+\end{minipage}
+\begin{minipage}[t]{\textwidth}\color{blue}
+/*3.6*float(V(L,t1-t0,t2-t0,t3-t0));*/
+\end{minipage}
+
+\noindent%
+
+\end{document}

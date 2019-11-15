@@ -3,3 +3,4 @@
 *.lyx~
 *.pyc
 *.lyx#
+__pycache__/
