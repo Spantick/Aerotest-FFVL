@@ -23,14 +23,14 @@
 dict(
   userdata=dict(
       d  = 0.0,                     # float, % de freins entre 0.0 et 100.0 [non implémenté]
-      mp = 140.0,                   # float, masse pilote
-      mv = 7.0,                     # float, masse voile (tissu seulement, le
+      mp = 1750.0,                   # float, masse pilote
+      mv = 7.5,                     # float, masse voile (tissu seulement, le
                                     #     poids de l'air est compensé par Archimède)
       ma = 14.0,                    # float masse air contenu (pour effets dynamiques)
       Cx0 = 0.01,                   # float, coefficient de traînée voile
                                     #       (frottement+forme).
-      Cxp = 0.017,                  # float, coefficient de traînée pilote.
-      Cxs = 0.017,                  # float, coefficient de traînée suspentage.
+      Cxp = 0.01,                  # float, coefficient de traînée pilote.
+      Cxs = 0.01,                  # float, coefficient de traînée suspentage.
       alfas = 15.0,                 # float, incidence décrochage (stall)
       alfac = None,                 # float, incidence fermeture (collapse) Marche pas bien
       ),                            # c'est tout ici
@@ -40,10 +40,10 @@ dict(
 #############################################################################
   parapente=dict(
       session='Sora',               # str, nom de la voile (session).
-      b = 7.5,                      # float, demi-envergure vraie.
-      S = 41,                       # float, surface vraie.
-      l = 3.5 ,                     # float, corde centrale vraie.
-      s = 7.0,                      # float, longueur du cône de suspentage.
+      b = 7.45,                      # float, demi-envergure vraie.
+      S = 41.5,                       # float, surface vraie.
+      l = 3.7 ,                     # float, corde centrale vraie.
+      s = 8.8,                      # float, longueur du cône de suspentage.
                                     # float, P et Q étant la position du pilote
                                     #     et la proj. orthogonale du pilote sur
                                     #     la corde centrale, on a s=dist(P,Q).
@@ -52,12 +52,17 @@ dict(
                                     #      de la voile xGv>0.
       zGv = -1.0,                   # float, position (en z) du centre de gravité
                                     #      de la voile zGv<0.
-      c = 0.30,                     # float, calage, i.e. position de Q en %de
+      c = 0.25,                     # float, calage, i.e. position de Q en %de
                                     #     corde centrale
                                     #     i.e. AQ/b, A=bord d'attaque au centre
                                     #     de la voile.
       zs = -3,                      # float, altitude du point d'application de
                                     #     la trainée suspente. zs<0.
+      lambda = 5.35, 
+      #deltaV : 38/55 km/h, 
+      #deltaCalage 115 mm, 
+      #corde moyenne = 2.8 m
+      #corde centrale = 3.7 m
       )
   )
 ###############################################################################

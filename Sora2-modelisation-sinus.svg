@@ -3031,7 +3031,7 @@
       <g
          inkscape:groupmode="layer"
          id="layer7"
-         style="white-space:pre;display:inline;stroke-linecap:butt;stroke-linejoin:round"
+         style="white-space:pre;display:none;stroke-linecap:butt;stroke-linejoin:round"
          inkscape:label="linéaire">
         <path
            style="white-space:pre;display:inline;fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.11932135;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3080,7 +3080,7 @@
       <g
          inkscape:groupmode="layer"
          id="layer8"
-         style="white-space:pre;display:none;stroke-linecap:butt;stroke-linejoin:round"
+         style="white-space:pre;display:inline;stroke-linecap:butt;stroke-linejoin:round"
          inkscape:label="sinus">
         <path
            sodipodi:nodetypes="cc"

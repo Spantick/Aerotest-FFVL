@@ -1,0 +1,106 @@
+
+  AAA    PPPPPP   EEEEEEE  RRRRRR    OOOOO
+ AAAAA   PP   PP  EE       RR   RR  OO   OO
+AA   AA  PPPPPP   EEEEE    RRRRRR   OO   OO
+AAAAAAA  PP       EE       RR  RR   OO   OO
+AA   AA  PP       EEEEEEE  RR   RR   OOOO0
+           Sunday, 17. November 2019 12:16PM 
+
+
+=====================================
+  Lexique et valeurs des paramètres  
+=====================================
+  Cx0 = 0.01   = Coefficient de traînée voilure seule.
+  Cxp = 0.01   = Coefficient de traînée pilote.
+  Cxs = 0.01   = Coefficient de traînée suspentage.
+    S = 41.5   = Surface voilure à plat (m2).
+    b = 7.45   = Demi envergure à plat (m).
+    c = 0.25   = Calage en %de corde centrale : c = AQ/b, où
+                    Q est la projection orthogonale du pilote sur la corde centrale,
+                    A est le bord d'attaque de la corde centrale.
+    d = 0.0    = Pourcentage de frein ∈ [0.0, 100.0] => non implémenté
+    l = 2.8    = Corde centrale (m).
+   ma = 14.0   = Masse masse d'air emprisonné.
+   mp = 180.0  = Masse pilote (kg)
+   mv = 7.5    = Masse voile seule (kg). NON compris la masse d'air emprisonné.
+    s = 8.8    = Longueur du cône de suspentage (m).
+  xGv = 2.0    = Position en z du centre de gravité de la voile, xGv>0. (m)
+  zGv = -1.0   = Position en x du centre de gravité de la voile, zGv<0. (m)
+   zs = -3     = Position en z du point d'application de la trainée suspente (m). zs<0.
+
+N.B. la valeur 'nan' (Not A Number), pour signifier que le calcul n'a pas abouti (plantage, non convergence..)
+
+N.B. suivant la valeur de l'incidence, le vol peut être d'un des types suivants (dans les 2 ou 3 derniers cas... à utiliser avec circonspection !):
+            .   > vol normal,
+            *   > vol marche arrière,
+            **  > vol dos,
+            *** > vol dos + marche arrière.
+
+
+
+=============
+  Equilibre  
+=============
+ Frein (%)           | 
+---------------------|-------
+ Incidence (°)       | 5.78   
+ Vitesse (km/h)      | 72.08  
+ Vz (m/s)            | 2.39   
+ Finesse             | 8.36   
+ Assiette (°)        | 1.08   
+ Centre poussee (%)  | 22.67  
+---------------------|-------
+ Cz                  | 0.35   
+ Cx voile            | 0.02   
+ Cm voile            | -0.08  
+---------------------|-------
+ Resultante(=0 ?)    | 0      
+ Moment(=0 ?)        | -0.5   
+
+
+
+==========================
+  Variation masse pilote  
+==========================
+---------------------|-------
+ masse pilote (kg)   | 1750.00
+---------------------|-------
+ Type de vol         | .      
+ Incidence (°)       | 5.56   
+ Vitesse (km/h)      | 224.38 
+ Vz (m/s)            | 7.55   
+ Finesse             | 8.24   
+ Assiette (°)        | 1.40   
+ Centre poussee (%)  | 22.51  
+---------------------|-------
+ Cz                  | 0.34   
+ Cx voile            | 0.02   
+ Cm voile            | -0.08  
+---------------------|-------
+ Resultante(=0 ?)    | 0      
+ Moment(=0 ?)        | -5e-05 
+---------------------|-------
+
+
+
+====================
+  Variation calage  
+====================
+---------------------|-----------------------
+ Calage (% de corde) | 25.0    30.0    35.0   
+ Type de vol         |  .       .       .    
+---------------------|-----------------------
+ Incidence (°)       | 5.78    6.57    7.44   
+ Vitesse (km/h)      | 72.08   68.18   64.56  
+ Vz (m/s)            | 2.39    2.17    2.00   
+ Finesse             | 8.36    8.70    8.93   
+ Assiette (°)        | 1.08    0.02    -1.03  
+ Centre poussee (%)  | 22.67   23.11   23.47  
+---------------------|-----------------------
+ Cz                  | 0.35    0.39    0.44   
+ Cx voile            | 0.02    0.02    0.03   
+ Cm voile            | -0.08   -0.09   -0.10  
+---------------------|-----------------------
+ Resultante(=0 ?)    | 0       0       0      
+ Moment(=0 ?)        | -4e-05  4e-05   4e-05  
+---------------------|-----------------------

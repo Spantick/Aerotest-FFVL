@@ -107,6 +107,19 @@
 
 \begin_body
 
+\begin_layout Standard 
+\begin_inset FormulaMacro
+\newcommand{\vinf}{V_{\infty}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\a}{{\bf a}}
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 FFVL, tests structure
 \end_layout
@@ -171,8 +184,92 @@ le protocole est adapté, mais Air Turquoise triche avec ce protocole.
 \end_layout
 
 \begin_layout Standard
-Concernant la Sora2-42, on trouve une représentation graphique des enregistremen
-ts dans le rapport de test structure (voir 
+Le pilotage des parapente s'est considérablement amélioré et affiné depuis
+ l'élaboration
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+de la norme de certification.
+ En particulier depuis la création
+\end_layout
+
+\end_inset
+
+ du protocole de test en charge.
+ Or les nouveaux modes de pilotage, des biplaces comme des voiles solos,
+ banalisent des manœuvres comme les wing-over appuyés, 360 engagés, voire
+ tumbling, vrille à plat ou décrochages dynamiques.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Il est fréquent qu'un client réclame au biplaceur professionnel les sensations
+ fortes associées à des wing-over ou 360 engagés.
+ 
+\end_layout
+
+\end_inset
+
+Lors de ces manœuvres extrêmes
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+ Dans la suite nous apellerons ces vols de type 
+\begin_inset Quotes qld
+\end_inset
+
+sensations fortes
+\begin_inset Quotes qrd
+\end_inset
+
+, par opposition à des vols de type 
+\begin_inset Quotes qld
+\end_inset
+
+tranquille
+\begin_inset Quotes qrd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, l'agilité des pilotes permet à la voilure de flirter avec des incidences
+ très faibles ou très fortes (proches de la fermeture ou du décrochage)
+ et de subir des accélérations importantes.
+ Pour ce qui est des incidences très faibles (proches de la fermeture),
+ on sait que les suspentes avant sont fortement sollicitées.
+ Le protocole d'homologation en structure permet-il d'approcher ces configuratio
+ns ? Répondre à cette question, c'est déterminer la plage d'incidence testée
+ lors d'une session, les accélérations subies par la voile, et la répartition
+ de charge dans le suspentage.
+ Une simulation numérique de la dynamique du test, même approximative, doit
+ y pourvoir.
+ Malheureusement une telle simulation, si elle est envisageable, est longue
+ et difficile à mener, et les données disponibles sont très incomplètes.
+\end_layout
+
+\begin_layout Standard
+Pour le deuxième point, s'appuyant sur son expérience, Vincent Teulier met
+ en doute le fait que le camion de Air Turquoise reste maîtrisable lors
+ de tests de biplaces et qu'il puisse atteindre les objectifs de la norme.
+ La longueur de piste pourrait être insuffisante, le poids du camion, sa
+ capacité d'accélération également.
+ L'idée serait d'évaluer, même approximativement, la vraisemblance des résultats
+ annoncés par Air Turquoise.
+\end_layout
+
+\begin_layout Section
+Les données
+\end_layout
+
+\begin_layout Itemize
+Les voiles : concernant la Sora2-42, on trouve une représentation graphique
+ des enregistrements dans le rapport de test structure (voir 
 \begin_inset CommandInset ref
 LatexCommand nameref
 reference "rapport Sora2"
@@ -182,9 +279,21 @@ noprefix "false"
 
 \end_inset
 
-)
+) et des données très générales dans la notice utilisateur (cf 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "Notice Sora2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Mais aucune donnée aérodynamique, aucun enregistrement sous forme numérique.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 Concernant la Sora2-38, aucun enregistrement des tests structure, n'est
  disponible sur le site d'Air Turquoise
@@ -232,42 +341,14 @@ A defaut de document précis concernant la Sora2-38, l'analyse sera menée
 
 \begin_layout Standard
 D'autres voiles biplaces ont été choisie un peu au hasard, chez Aérotest
- et Air Turquoise, pour valider les calculs, et comparer les protocoles
- de test entre ces deux intervenants.
+ et Air Turquoise, pour tenter de valider les calculs, et comparer les protocole
+s de test entre ces deux intervenants.
+ Les données de réferences seront celles de la notice utilisateur du biplace
+ Sora2-42.
+ 
 \end_layout
 
-\begin_layout Section
-Premiers pas
-\end_layout
-
-\begin_layout Enumerate
-Pour convertir une charge de kilogrammes en Newtons : 
-\begin_inset Formula 
-\[
-x_{N}=x_{kg}\times9.81
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Pour convertir une vitesse de km/h en m/s :
-\begin_inset Formula 
-\[
-x_{m/s}=x_{km/h}\times0.28
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Les données
-\end_layout
-
+\end_deeper
 \begin_layout Itemize
 Air Turquoise : 
 \end_layout
@@ -286,11 +367,7 @@ son poids à vide (
 \begin_inset Formula $2100\ kg$
 \end_inset
 
-, soit 
-\begin_inset Formula $p_{c}=20594\ N$
-\end_inset
-
- , le poids max en charge 
+, le poids max en charge 
 \begin_inset Formula $3000\ kg$
 \end_inset
 
@@ -366,9 +443,9 @@ Aérotest :
 
 \begin_deeper
 \begin_layout Itemize
-le camion pèse 12 Tonnes, centre de g bas, repartition 1/3 moteur, gueuses
+le camion pèse 7 Tonnes, centre de g bas, repartition 1/3 moteur, gueuses
  a l'ar.
- (5 tonnes) 
+ (+ 5 tonnes) 
 \end_layout
 
 \begin_layout Itemize
@@ -409,8 +486,9 @@ Première analyse
 \end_layout
 
 \begin_layout Standard
-On constate à la lecture des compte-rendus de test, que les charges 
-\begin_inset Formula $F_{max}$
+On constate à la lecture des compte-rendus de tests, que les charges maximales
+ 
+\begin_inset Formula $F_{m}$
 \end_inset
 
  atteintes ne sont pas les mêmes chez Aerotest et chez Air Turquoise.
@@ -424,15 +502,46 @@ noprefix "false"
 
 \end_inset
 
+.
+\end_layout
+
+\begin_layout Itemize
+Chez Aérotest, les deux règles sont satisfaites (5 pics > 10g et 3s > 8g).
+\end_layout
+
+\begin_layout Itemize
+Chez Air Turquoise seule la règle des 3s > 8g est satisfaite.
+\end_layout
+
+\begin_layout Standard
+N'ayant pas de diagramme de vitesse des véhicules, ni les enregistrements
+ de charges numérisées, ni les caractéristiques aérodynamiques de la voile,
+ il est très difficile d'analyser ces courbes.
+\end_layout
+
+\begin_layout Standard
+En effet, la charge qui s'applique au points d'ancrage sur le camion dépend
+ du carré de la vitesse 
+\begin_inset Formula $V^{2}$
+\end_inset
+
+ du parapente et de son incidence 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ (ou son assiette, ce qui est équivalent ici).
  
 \end_layout
 
-\begin_layout Itemize
-Chez Aérotest, les deux règles sont satisfaites (5 pics > 10g et 3s > 8g),
+\begin_layout Standard
+Afin de répondre à la deuxième question, on a besoin d'évaluer la vitesse
+ maximale atteinte par le camion d'Air Turquoise sur sa piste.
+ 
 \end_layout
 
-\begin_layout Itemize
-chez Air Turquoise seule la règle des 3s > 8g est satisfaite.
+\begin_layout Standard
+Dans le paragraphe suivant, on va tenter d'évaluer la vitesse maximale à
+ partir du diagramme de test en charge.
 \end_layout
 
 \begin_layout Standard
@@ -478,103 +587,582 @@ noprefix "false"
 \end_layout
 
 \begin_layout Section
-Etude aérodynamique
+\begin_inset CommandInset label
+LatexCommand label
+name "calcul Vmax"
+
+\end_inset
+
+Vitesses maximales et forces maximales
 \end_layout
 
 \begin_layout Standard
-Le pilotage des parapente s'est considérablement amélioré et affiné depuis
- l'élaboration de la norme de certification.
- En particulier depuis la création du protocole de test en charge.
- Or les nouveaux modes de pilotage, des biplaces comme des voiles solos,
- banalisent des manœuvres comme les wing-over appuyés, 360 engagés, voire
- tumbling, vrille à plat ou décrochages dynamiques.
- Il est fréquent qu'un client réclame au biplaceur professionnel les sensations
- fortes associées à des wing-over ou 360 engagés.
- Lors de ces manœuvres un peu extrêmes, l'agilité des pilotes permet que
- la voilure subisse des accélérations importantes, et flirte avec des incidences
- très faibles ou très fortes (proches de la fermeture ou du décrochage).
- Pour ce qui est des incidences très faibles (proches de la fermeture),
- on sait que les suspentes avant sont fortement sollicitées.
- Or le protocole d'homologation en structure ne permet pas d'approcher ces
- incidences extrêmes.
- Il est donc important de savoir quelle plage d'incidence est testée lors
- d'une session de tests, et de connaître la répartition de charge dans le
- suspentage.
- Une simulation numérique, même approximative, doit répondre à ces questions.
- C'est l'objet des lignes qui suivent.
+Il faut en premier lieu noter que la vitesse du camion et celle de la voilure
+ ne sont pas les mêmes, eu égard aux fortes oscillations montrées par les
+ graphiques.
+ Sauf précision, nous parlerons de la vitesse du camion.
+\end_layout
+
+\begin_layout Subsection
+Evaluation des vitesses à atteindre
 \end_layout
 
 \begin_layout Standard
-En faisant l'hypothèse que l'accélération 
-\begin_inset Formula $\gamma$
+On note 
+\begin_inset Formula $t$
 \end_inset
 
- est constante, en vertu de la loi fondamentale de la dynamique Newtonienne,
- la voile est soumise à une force 
-\begin_inset Formula $F_{\gamma}=m\gamma$
+ le temps, 
+\begin_inset Formula $\rho\sim1,2kg/m^{3}$
 \end_inset
 
-, proportionnelle à la masse 
-\begin_inset Formula $m=m_{v}+m_{a}$
+ la densité de l'air, 
+\begin_inset Formula $S=42m^{2}$
 \end_inset
 
-, somme de la masse de la voilure et de l'air contenu.
+ la surface de la voilure, 
+\begin_inset Formula $V$
+\end_inset
+
+ la vitesse en 
+\begin_inset Formula $m/s$
+\end_inset
+
+, 
+\begin_inset Formula $C_{z}$
+\end_inset
+
+ et 
+\begin_inset Formula $C_{x}$
+\end_inset
+
+ les coefficients de portance et de traînée du parapente.
+ Les coefficients de traînée et de portance sont généralement du même ordre
+ de grandeur pour tous les parapentes du marché à une époque donnée, mais
+ dépendent très sensiblement de l'incidence de vol 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, ce qui aura son importance par la suite.
 \end_layout
 
 \begin_layout Standard
-Le calcul du volume délimité par le tissu, permet d'évaluer la masse d'air
- emmagasinée dans un biplace à 
-\begin_inset Formula $m_{a}\sim10\ kg$
+En première approximation, on est tenté de raisonner ainsi :
+\end_layout
+
+\begin_layout Standard
+On note 
+\begin_inset Formula $F_{m}$
 \end_inset
 
- et pour la voilure seule 
-\begin_inset Formula $m_{v}\sim7\ kg$
+ la force maximale mesurée et 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ la vitesse maximale atteinte.
+ 
+\end_layout
+
+\begin_layout Standard
+L'effort total mesuré sur la voilure en fonction du temps est donné par
+ la formule suivante, 
+\begin_inset Formula 
+\begin{equation}
+F\left(t\right)=\frac{1}{2}\rho SV^{2}\left(t\right)\sqrt{C_{x}^{2}\left(t\right)+C_{z}^{2}\left(t\right)}\label{eq:F}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La force 
+\begin_inset Formula $F$
+\end_inset
+
+ est donc proportionnelle au carré de la vitesse 
+\begin_inset Formula $V^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+F=kV^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ceci implique que pour atteindre 
+\begin_inset Formula $9$
+\end_inset
+
+ fois la valeur du PTV maximal conseillé par le constructeur, la vitesse
+ à atteindre est 
+\begin_inset Formula $3$
+\end_inset
+
+ fois la vitesse maximale du parapente en condition normale.
+ Les chiffres du constructeur sont PTV maximal = 
+\begin_inset Formula $220\,kg$
+\end_inset
+
+, et 
+\begin_inset Formula $V=40\,km/h$
+\end_inset
+
+ on devrait donc rouler à 
+\begin_inset Formula $120\,km/h$
+\end_inset
+
+.
+ Plus précisément : 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $3s>8g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $5\text{pics}>10g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1760\,kg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2200\,kg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{m}\,\left(km/h\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $113.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $126.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Charges 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ et vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ requises, utilisant les données du manuel utilisateur du Sora2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On constate qu'avec ce modèle, les vitesses à atteindre sont plus élevées
+ que les vitesses réellement atteintes chez Aérotest.
+ 
+\end_layout
+
+\begin_layout Standard
+Cette table des vitesses 
+\begin_inset Formula $V>V_{m}$
+\end_inset
+
+ requises est donc à lire avec précaution, et ne constitue que des ordres
+ de grandeur sur-évalués.
+\end_layout
+
+\begin_layout Itemize
+Des oscillations de la voile (donc des accélérations induisant des montées
+ en charge) peuvent induire des pics 
+\begin_inset Formula $F>F_{m}$
+\end_inset
+
+, sans que la vitesse du véhicule n'ait atteint la valeur 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ indiquée.
+ Il est donc normal que les véhicules n'atteignent pas ces vitesses, bien
+ qu'ils atteignent la charge requise.
+\end_layout
+
+\begin_layout Itemize
+Ces montées en charge ponctuelles impliquent des variations d'incidence
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ brutales qui reflètent probablement assez bien les valeurs obtenues en
+ vol de type 
+\begin_inset Quotes qld
+\end_inset
+
+sensations fortes
+\begin_inset Quotes qrd
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
-La force due à l'accélération est donc de l'ordre de grandeur de 
-\begin_inset Formula $F_{\gamma}\sim15\ N$
+\begin_layout Itemize
+Les vols de type 
+\begin_inset Quotes qld
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Cette force est à rajouter au bilan des forces extérieures s'appliquant
- sur le parapente, en sus de la résultante des forces aérodynamiques, de
- la réaction du point d'attache au camion et des diverses sources de traînée
- et de portance.
- Un algorithme existe, qui permet de calculer les paramètres de l'équilibre
- d'un parapente dans une soufflerie, à une vitesse constante 
-\begin_inset Formula $V_{\infty}$
+tranquille
+\begin_inset Quotes qrd
 \end_inset
 
-.
- En modifiant légèrement cet algorithme de manière à prendre en compte cette
- nouvelle force, nous allons évaluer les caractéristiques de vol du parapente
- en test structure.
-\end_layout
-
-\begin_layout Section
-Vitesses atteintes
+ ne sont pas bien simulés par les tests.
+ 
 \end_layout
 
 \begin_layout Standard
-Les graphiques des tests en charge donnent la charge mesurée (ordonnée)
- en fonction du temps de roulage (abscisse).
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Une variation relative de vitesse de 
+\begin_inset Formula $\frac{\Delta V}{V}$
+\end_inset
+
+ se traduit donc par une variation relative de l'effort sur la voile 
+\begin_inset Formula $\frac{\Delta F}{F}$
+\end_inset
+
+ :
+\begin_inset Formula 
+\[
+\frac{\Delta F}{F}\sim2\times\frac{\Delta V}{V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evaluation des vitesses effectivement atteintes par les camions Air Turquoise
+ et Aérotest
+\end_layout
+
+\begin_layout Standard
+Les graphiques des tests en charge donnent la charge mesurée (en ordonnée)
+ en fonction du temps de roulage (en abscisse).
  Il semble possible, à partir de ces graphiques, d'évaluer la vitesse maximale
  (
 \begin_inset Formula $V_{m}$
 \end_inset
 
 ) atteinte durant un run.
- Voir 
+ 
+\end_layout
+
+\begin_layout Standard
+On note 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $t_{m}$
+\end_inset
+
+ le temps où la charge maximale est atteinte, 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ la charge au temps 
+\begin_inset Formula $t$
+\end_inset
+
+, c'est la fonction lue sur les graphiques, et 
+\begin_inset Formula $F_{m}=F\left(t_{m}\right)$
+\end_inset
+
+ la charge maximale imposée par la norme,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V\left(t\right)$
+\end_inset
+
+ la vitesse (inconnue) du camion au temps 
+\begin_inset Formula $t$
+\end_inset
+
+, et 
+\begin_inset Formula $V_{m}=V\left(t_{m}\right)$
+\end_inset
+
+ la vitesse atteinte (inconnue également).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L$
+\end_inset
+
+ ou 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+ la distance de roulage.
+\end_layout
+
+\begin_layout Standard
+Le principe de ce calcul est assez simple : connaissant la loi de variation
+ des efforts 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+, on en déduit la loi de variation de la vitesse 
+\begin_inset Formula $V\left(t\right)$
+\end_inset
+
+ (qui est proportionnelle à la racine carrée de l'effort cf 
 \begin_inset CommandInset ref
-LatexCommand nameref
-reference "calcul Vmax"
+LatexCommand ref
+reference "eq:F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), puis par simple intégration, la loi du mouvement (ou trajectoire) 
+\begin_inset Formula $X\left(t\right)$
+\end_inset
+
+.
+ Connaissant à tout instant la position et la vitesse, on en déduit une
+ équation très simple qui relie la distance de roulage 
+\begin_inset Formula $L$
+\end_inset
+
+ ou 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+ et la vitesse maximale 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+On découpe le domaine de temps en 3 intervalles, chaque intervalle ou palier,
+ est mesuré sur le graphique correspondant :
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left[t_{0},t_{1}\right]$
+\end_inset
+
+ 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left[t_{1},t_{2}\right]$
+\end_inset
+
+ 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+ à vitesse constante.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left[t_{2},t_{3}\right]$
+\end_inset
+
+ 
+\begin_inset Quotes qld
+\end_inset
+
+décélération
+\begin_inset Quotes qrd
+\end_inset
+
+ et fin du test.
+\end_layout
+
+\begin_layout Standard
+Une étape fastidieuse de relevé des temps de 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+, de 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+ et de 
+\begin_inset Quotes qld
+\end_inset
+
+décélération
+\begin_inset Quotes qrd
+\end_inset
+
+ doit être réalisée.
+ Pour les résultats sous forme d'un dictionnaire en langage Python, cf.
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:Données-relevées"
 plural "false"
 caps "false"
 noprefix "false"
@@ -585,88 +1173,154 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
+Quatre modes de détermination de la vitesse 
+\begin_inset Formula $V_{m}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Section*
-Annexes
-\end_layout
-
-\begin_layout Subsection
-\begin_inset CommandInset label
-LatexCommand label
-name "calcul Vmax"
-
-\end_inset
-
-Evaluation de la vitesse maximale
-\end_layout
-
-\begin_layout Standard
-Dans les deux cas (Aérotest et Air Turquoise), les graphiques de montée
- en charge ont une tendance linéaire marquée.
- 
+ sont ensuite étudiés : 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-Sur cette plage linéaire, on peut supposer que la vitesse croît également
- de manière linéaire, c'est à dire que l'accélération est constante.
- Dans ce cas, elle vaut (
-\begin_inset Formula $L$
+ils donnent tous des vitesses 
+\begin_inset Formula $V_{m}$
 \end_inset
 
- est la distance de roulage, on suppose que c'est la longueur de la piste
- moins 
-\begin_inset Formula $50\ m$
-\end_inset
-
-, 
-\begin_inset Formula $t_{max}$
-\end_inset
-
- est le temps de roulage depuis le démarrage jusqu'au palier ou 
-\begin_inset Formula $F_{max}$
-\end_inset
-
- est atteint , relevé sur les graphiques)
-\begin_inset Formula 
-\[
-\gamma=\frac{L}{t_{max}^{2}}
-\]
+ beaucoup trop élevée par rapport à la réalité :
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-Dans ce cas, la vitesse atteinte est
-\begin_inset Foot
+\begin_layout Enumerate
+on prend en compte uniquement le palier 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+ 
+\begin_inset Formula $\left[t_{0},t_{1}\right]$
+\end_inset
+
+ et on ignore le 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+ et la 
+\begin_inset Quotes qld
+\end_inset
+
+décélération
+\begin_inset Quotes qrd
+\end_inset
+
+.
+ On évalue par ailleurs la longueur utile 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+ de la piste, c'est à dire la longueur de la 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+, jusqu'au 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+.
+ On modélise le run de deux manières différentes :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+soit avec une approximation de la charge 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ linéaire par palier (la courbes de montée en charge est assimilée à une
+ droite).
+\end_layout
+
+\begin_layout Enumerate
+soit avec oscillations sinusoïdales : 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ est postulé comme dans le cas linéaire ci-dessus mais on lui ajoute des
+ oscillations sinusoïdale.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+On prend en compte les trois paliers, et on modélise le run de deux manières
+ différentes :
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+soit avec une approximation de la charge 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ linéaire par palier (les courbes de montée en charge, de plateau et de
+ décélération sont assimilées à des segments de droites qui se raccordent).
+\end_layout
+
+\begin_layout Enumerate
+soit avec oscillations sinusoïdales : 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ est postulé comme dans le cas linéaire ci-dessus mais on lui ajoute des
+ oscillations sinusoïdale.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
-La formule exacte tenant compte de fluctuations de 
-\begin_inset Formula $\gamma$
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Sora2-modelisation-lineaire.svg
+	width 80text%
+
 \end_inset
 
- est 
-\begin_inset Formula $V_{max}=V\left(t_{max}\right)=\intop_{0}^{t_{max}}\gamma\left(t\right)dt$
-\end_inset
 
+\begin_inset Caption Standard
 
+\begin_layout Plain Layout
+Modélisation linéaire
 \end_layout
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-V_{max}=\frac{L}{t_{max}}
-\]
 
 \end_inset
 
@@ -674,14 +1328,310 @@ V_{max}=\frac{L}{t_{max}}
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Sora2-modelisation-sinus.svg
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modélisation avec oscillations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diverses-modélisations-charge"
+
+\end_inset
+
+Diverses modélisations de la courbe de charge de la Sora2 et courbe des
+ vitesses associée
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Résultats dans le cas linéaire à un seul palier
+\end_layout
+
+\begin_layout Standard
+On connaît la longueur de la piste 
+\begin_inset Formula $L$
+\end_inset
+
+, on estime qu'une partie 
+\begin_inset Formula $L_{u}<L$
+\end_inset
+
+ de cette longueur est utilisée pour atteindre la vitesse maximale (voir
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:Longueur-de-piste-utile"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ La charge est alors supposée égale à 
+\begin_inset Formula $F\left(t\right)=F_{m}\frac{t}{t_{m}}$
+\end_inset
+
+ et 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $L_{u}=\frac{2}{3}V_{m}t_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ l'équation 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:modele-linéaire-1palier"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ nous donne 
+\begin_inset Formula 
+\[
+V_{m}=\frac{3}{2}\frac{L_{u}}{t_{m}}
+\]
+
+\end_inset
+
+La longueur utile 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+ est connue avec une incertitude qui correspond aux couples de valeurs données
+ dans le tableau suivant
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Preview
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{|l|l|l|l|l|l|}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noalign{
+\backslash
+vskip0.1cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+Modèle & $F_{m} 
+\backslash
+left(N
+\backslash
+right)$ & $t_{m} 
+\backslash
+left(s
+\backslash
+right)$ & $L_u 
+\backslash
+left(m
+\backslash
+right)$ & $V_{m} 
+\backslash
+left(km/h
+\backslash
+right)$ & $
+\backslash
+gamma 
+\backslash
+left(m/s^2
+\backslash
+right)$ 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+noalign{
+\backslash
+vskip0.1cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+BiGolden 4 light & 16797 & 30  & 450-600  & 81-108 & 0.8-1.0 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Windtech Ru-Bi 2 & 17740 & 29  & 450-600  & 84-112 & 0.8-1.1 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+Supair Sora 2 & 17361 & 31  & 450-600  & 78-105 & 0.7-0.9 
+\backslash
+tabularnewline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Air Turquoise : estimation des vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ effectivement atteintes et accélérations 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, selon la charge et la longueur de piste utile 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="4">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -691,15 +1641,6 @@ status collapsed
 
 \begin_layout Plain Layout
 Aérotest
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-??
 \end_layout
 
 \end_inset
@@ -753,15 +1694,6 @@ Hercules
 \begin_inset Text
 
 \begin_layout Plain Layout
-21582.0
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 20601.0
 \end_layout
 
@@ -807,15 +1739,6 @@ Hercules
 \begin_inset Text
 
 \begin_layout Plain Layout
-32
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 48
 \end_layout
 
@@ -840,15 +1763,6 @@ Hercules
 \end_inset
 
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-616.6
 \end_layout
 
 \end_inset
@@ -889,15 +1803,6 @@ Hercules
 \begin_inset Text
 
 \begin_layout Plain Layout
-1.71
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 0.60
 \end_layout
 
@@ -925,7 +1830,7 @@ Hercules
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -1085,7 +1990,7 @@ end{tabular}
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -1337,13 +2242,18 @@ Super-Sora 2(42)
 
 \end_layout
 
+\begin_layout Standard
+\align center
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Plain Layout
 \align center
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -1378,15 +2288,11 @@ vskip0.1cm}
 
 \begin_layout Plain Layout
 
-Modèle & $F_{max}
-\backslash
- 
+Modèle & $F_{max} 
 \backslash
 left(N
 \backslash
-right)$ & $ t_{max}
-\backslash
- 
+right)$ & $ t_{max} 
 \backslash
 left(s
 \backslash
@@ -1470,7 +2376,19 @@ end{tabular}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Test en structure chez Air Turquoise
+Air Turquoise : estimation des vitesses 
+\begin_inset Formula $V_{max}$
+\end_inset
+
+ à atteindre et accélérations 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, selon la charge et la longueur de piste utile 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1483,7 +2401,12 @@ Test en structure chez Air Turquoise
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \align center
 \begin_inset Float table
 placement H
@@ -1503,14 +2426,16 @@ status open
 
 
 \backslash
-begin{tabular}{|l|l|l|l|l|l|}
+begin{tabular}{|l|l|l|l|l|l|}                                          
+                
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-hline
+hline                                                                  
+                
 \end_layout
 
 \begin_layout Plain Layout
@@ -1519,30 +2444,37 @@ hline
 \backslash
 noalign{
 \backslash
-vskip0.1cm}
+vskip0.1cm}                                                             
+   
 \end_layout
 
 \begin_layout Plain Layout
 
-Modèle & $ F_{max}
-\backslash
- 
+Modèle & $F_{m} 
 \backslash
 left(N
 \backslash
-right)$ & $ t_{max}
-\backslash
- 
+right)$ & $t_{m} 
 \backslash
 left(s
 \backslash
+right)$ & $L_u 
+\backslash
+left(m
+\backslash
+right)$ & $V_{m} 
+\backslash
+left(km/h
+\backslash
 right)$ & $
+\backslash
+                                 
 \backslash
 gamma 
 \backslash
 left(m/s^2
 \backslash
-right)$ & $V_{max} (km/h)$ & Remarque 
+right)$ 
 \backslash
 tabularnewline
 \end_layout
@@ -1565,21 +2497,14 @@ hline
 
 \begin_layout Plain Layout
 
-Hercules & 22840 & 50.0  & 0.6 & 115.2 & 3s à 8g et 5 pics à 10g 
+Hercules & 22840 & 50  & 1150 - 1300 & 124 - 140 & 0.7 - 0.8 
 \backslash
 tabularnewline
 \end_layout
 
 \begin_layout Plain Layout
 
-MacPara Trike 42 & 20850 & 48.0  & 0.7 & 120.0 & 3s à 8g et 5 pics à 10g 
-\backslash
-tabularnewline
-\end_layout
-
-\begin_layout Plain Layout
-
-?? & 21092 & 35.0  & 1.3 & 164.6 & un test ?? 
+MacPara Trike 42 & 20850 & 46  & 1150 - 1300 & 135 - 153 & 0.8 - 0.9 
 \backslash
 tabularnewline
 \end_layout
@@ -1612,7 +2537,19 @@ end{tabular}
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Test en structure chez Aerotest
+Aérotest : estimation des vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ effectivement atteintes et accélérations 
+\begin_inset Formula $\gamma$
+\end_inset
+
+, selon la charge et la longueur de piste utile 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1625,14 +2562,18 @@ Test en structure chez Aerotest
 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Standard
 La lecture de ces tables n'évoque aucune anomalie, si ce n'est que les charges
  atteintes par Air Turquoise sont beaucoup moins importantes que celles
  atteintes par Aérotest.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Plain Layout
-Il apparaît que Air Turquoise teste les voile selon un seul critère, celui
+Il apparaît que Air Turquoise teste les voiles selon un seul critère, celui
  des 3s à 8g, tandis qu'Aérotest satisfait aux deux critères 3s, 8g et 5
  pics à 10g.
 \end_layout
@@ -1640,89 +2581,22 @@ Il apparaît que Air Turquoise teste les voile selon un seul critère, celui
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
+\begin_layout Plain Layout
 En première analyse, cette caractéristique des montées en charge peut être
  interprétée pour évaluer les vitesses atteintes.
  
 \end_layout
 
-\begin_layout Standard
-On note 
-\begin_inset Formula $t$
-\end_inset
-
- le temps, 
-\begin_inset Formula $\rho\sim1kg/m^{3}$
-\end_inset
-
- la densité de l'air, 
-\begin_inset Formula $S=42m^{2}$
-\end_inset
-
- la surface de la voilure, 
-\begin_inset Formula $V$
-\end_inset
-
- la vitesse en 
-\begin_inset Formula $m/s$
-\end_inset
-
-, 
-\begin_inset Formula $C_{z}$
-\end_inset
-
- et 
-\begin_inset Formula $C_{x}$
-\end_inset
-
- les coefficients de portance et de traînée du parapente.
- Les coefficients de traînée et de portance sont généralement du même ordre
- de grandeur pour tous les parapente du marché à une époque donnée, mais
- dépendent très sensiblement de l'incidence de vol, ce qui aura son importance
- par la suite.
-\end_layout
-
-\begin_layout Standard
-L'effort total mesuré sur la voilure en fonction du temps est donné par
- la formule suivante, 
-\begin_inset Formula 
-\begin{equation}
-F\left(t\right)=\frac{1}{2}\rho\times S\times V^{2}\left(t\right)\times\sqrt{C_{x}^{2}\left(t\right)+C_{z}^{2}\left(t\right)}\label{eq:F}
-\end{equation}
-
 \end_inset
 
 
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
-La force 
-\begin_inset Formula $F$
-\end_inset
-
- est donc proportionnelle au carré de la vitesse 
-\begin_inset Formula $V^{2}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Une variation de vitesse de 
-\begin_inset Formula $x\%$
-\end_inset
-
- se traduit par une variation de 
-\begin_inset Formula $2\times x\%$
-\end_inset
-
- de l'effort sur la voile.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 Une variation de 
 \begin_inset Formula $y\%$
 \end_inset
@@ -1734,16 +2608,1627 @@ Une variation de
  de l'effort sur la voilure.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Résultats dans le cas sinusoïdal à un palier
+\end_layout
+
 \begin_layout Standard
-On note 
+Ce cas n'a pas été traité
+\end_layout
+
+\begin_layout Subsubsection
+Résultats dans le cas linéaire à trois paliers (montée en charge, plateau,
+ décélération)
+\end_layout
+
+\begin_layout Standard
+Chronologiquement, cette modélisation a été traitée en premier.
+ 
+\end_layout
+
+\begin_layout Standard
+On décompose les graphiques de montée en charge en trois intervales de temps
+ (paliers) lus sur les graphiques.
+ Dans chaque intervale, la charge est supposée évoluer linéairement (croissante
+ dans le palier 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+, constantes dans le palier 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+ et décroissante dans le palier 
+\begin_inset Quotes qld
+\end_inset
+
+décélération
+\begin_inset Quotes qrd
+\end_inset
+
+).
+ Le détail des calculs est présenté en annexe, et aboutit à l'équation 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "eq:dist-modele-lineaire-3paliers"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+V_{m}=3\frac{L}{2t_{3}+t_{2}-t_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dessin-1.svg
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Modélisation, linéaire par palier, de la courbe des efforts (Sora2-42)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Modélisation-linéaire par palier"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les résultats sont les suivants 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+opérateur
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+modèle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $F_{m}$
 \end_inset
 
- la force maximale mesurée et 
+ (connue, en N)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 \begin_inset Formula $V_{m}$
 \end_inset
 
- la vitesse maximale atteinte.
+ (évaluée, en km/h)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aérotest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hercules
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $22840$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $128.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MacPara Trike 42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20850$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $131.8$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stewart-DGAC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $24525$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $206.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stewart
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17265.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $147.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Air Turquoise
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supair Sora 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17360.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supair Sora 1-41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17059.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $80.76$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estimation des vitesses, modélisation linéaire, à 3 paliers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Résultats dans le cas sinusoïdal à trois paliers
+\end_layout
+
+\begin_layout Standard
+Cette approche consiste à ajouter une fonction sinusoïdale au modèle linéaire
+ du paragraphe précédent.
+ Elle donne des résultats sensiblement identiques, en sur-évaluant la vitesse
+ atteinte par les véhicules.
+ La vitesse 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ dans ce cas, ne peut pas être calculée analytiquement, on n'a pas de formule.
+ On l'évalue donc numériquement.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Sora2-model-sinus-3paliers.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estimation des vitesses 
+\begin_inset Formula $V_{max}$
+\end_inset
+
+ effectivement atteintes, selon la charge et la longueur de piste utile
+ 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+.
+ Modélisation sinusoïdale à 3 paliers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Sora2-model-lin-3paliers.svg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estimation des vitesses 
+\begin_inset Formula $V_{max}$
+\end_inset
+
+ effectivement atteintes, selon la charge et la longueur de piste utile
+ 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+.
+ Modélisation linéaire à 3 paliers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les résultats pour des longueurs de piste 
+\begin_inset Formula $800\,m$
+\end_inset
+
+ pour Air Turquoise et 
+\begin_inset Formula $1600\,m$
+\end_inset
+
+ pour Aérotest
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+opérateur
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+modèle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ (connue, en N)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ (évaluée, en km/h)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aérotest
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hercules
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $22840$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $128.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MacPara Trike 42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20850$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $131.9$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stewart-DGAC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $24525$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $208.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Stewart
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17265.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $147.7$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Air Turquoise
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supair Sora 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17360.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100.15$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Supair Sora 1-41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17059.6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $80.76$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estimation des vitesses, modélisation linéaire, à 3 paliers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans tous les cas, on trouve des vitesses beaucoup plus élevées que celles
+ anoncées par Vincent Teulier.
+\end_layout
+
+\begin_layout Subsubsection
+Bilan intermédiaire
+\end_layout
+
+\begin_layout Standard
+Pour exploiter les rares données dont on dispose on est obligé de faire
+ des hypothèses simplificatrices et une modélisation du phénomène.
+ Ces hypothèses n'apportent pas de réponses satisfaisantes.Il apparaît alors
+ que le problème est 
+\emph on
+essentiellement
+\emph default
+ conditionné par les oscillations de la voilure au cours du run, et qu'il
+ y a lieu de distinguer la vitesse du véhicule et celle de la voilure.
+\end_layout
+
+\begin_layout Standard
+Ces oscillations font fortement varier les incidences et la répartition
+ des charges dans le suspentage.
+ Il m'est impossible d'en dire plus.
+\end_layout
+
+\begin_layout Standard
+Dans tous les modèles testés, on trouve des vitesses de véhicule beaucoup
+ plus élevées que celles anoncées par Vincent Teulier.
+\end_layout
+
+\begin_layout Standard
+La seule indication que l'on puisse en tirer est que les vitesses atteintes
+ chez Air Turquoise sont toujours plus faibles que celles atteintes chez
+ Aérotest.
+ (environ 20%)
+\end_layout
+
+\begin_layout Section
+Etude aérodynamique
+\end_layout
+
+\begin_layout Standard
+En faisant l'hypothèse que l'accélération 
+\begin_inset Formula $\a$
+\end_inset
+
+ est constante, en vertu de la loi fondamentale de la dynamique Newtonienne,
+ la voile est soumise à une force inertielle 
+\begin_inset Formula $F_{i}=m\a$
+\end_inset
+
+, proportionnelle à la masse 
+\begin_inset Formula $m=m_{v}+m_{a}$
+\end_inset
+
+, somme de la masse de la voilure et de l'air contenu.
+\end_layout
+
+\begin_layout Standard
+Le calcul du volume délimité par le tissu, permet d'évaluer la masse d'air
+ emmagasinée dans un biplace à 
+\begin_inset Formula $m_{a}\sim10\ kg$
+\end_inset
+
+ et pour la voilure seule 
+\begin_inset Formula $m_{v}\sim7\ kg$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La force due à l'accélération du véhicule est de l'ordre de grandeur de
+ 
+\begin_inset Formula $F_{i}=\frac{{\bf a}}{m}\sim15\ N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Mais la voile subit en plus des accélérations du véhicule, des variations
+ de vitesse très importantes, à la fréquence de 0.8 à 1.1 hertz (le nombre
+ d'oscillation par seconde), qui à leur tour modifient l'accélération du
+ véhicule, et qu'il faudrait pouvoir mesurer.
+\end_layout
+
+\begin_layout Standard
+Ces forces inertielles sont à rajouter au bilan des forces extérieures s'appliqu
+ant sur le parapente, en plus de la réaction du point d'attache au camion
+ et des diverses sources de traînée.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Un algorithme existe, qui permet de calculer les paramètres de l'équilibre
+ d'un parapente dans une soufflerie, à une vitesse constante 
+\begin_inset Formula $V_{\infty}$
+\end_inset
+
+.
+ En modifiant légèrement cet algorithme de manière à prendre en compte cette
+ nouvelle force, nous pourrions évaluer les caractéristiques de vol du parapente
+ en test.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ces forces inertielles dépendent essentiellement du temps, et la mise en
+ équations du phénomène demande une étude poussée de la dynamique de ces
+ tests.
+\end_layout
+
+\begin_layout Standard
+Le temps imparti est insuffisant, mais le problème digne d'intérêt ! 
+\end_layout
+
+\begin_layout Subsection
+Une étude simplifiée
+\end_layout
+
+\begin_layout Standard
+Il est possible d'étudier rapidement deux problèmes simplifiés :
+\end_layout
+
+\begin_layout Enumerate
+un problème d'aérodynamique où la voilure est soumise à une force d'inertie
+ constante 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+, et de calculer la variation d'incidence qui en résulte,
+\end_layout
+
+\begin_layout Enumerate
+un problème d'élasticité pour calculer la répartition des charges dans le
+ suspentage, avec et sans cette force d'inertie constante.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+par manque de données, cette analyse est très incomplète et approximative.
+ Cependant, quelques points peuvent être mis en lumière :
+\end_layout
+
+\begin_layout Standard
+Pour répondre au questions posées :
+\end_layout
+
+\begin_layout Itemize
+Les voiles ne sont pas testées de manière équivalente chez Air Turquoise
+ et chez Aérotest.
+ Le protocole appliqué est beaucoup plus pénalisant chez Aérotest.
+\end_layout
+
+\begin_layout Itemize
+Pour autant, 
+\emph on
+on ne peut pas conclure
+\emph default
+ avec certitude à une quelconque forme de triche chez Air Turquoise.
+\end_layout
+
+\begin_layout Itemize
+Lors de ces tests en charge, on peut estimer que la charge 
+\begin_inset Formula $F$
+\end_inset
+
+ se répartit en une composante verticale 
+\begin_inset Formula $F_{z}\sim\frac{9}{10}F=1.8\,T$
+\end_inset
+
+ et une composante horizontale 
+\begin_inset Formula $F_{x}\sim\frac{1}{10}F=200\,kg$
+\end_inset
+
+, avec des coups de boutoir assez violents.
+ Ceci pourrait être interprété par un expert automobile pour déterminer
+ la manœvrabilité du camion de Air Turquoise dans ces conditions.
+\end_layout
+
+\begin_layout Itemize
+L'accélération du véhicule ajoute une force d'inertie, qui en moyenne est
+ importante, dirigée vers l'arrière, et qui positionne le parapente à une
+ incidence supérieure à une incidence de vol usuelle.
+ A cette incidence, le centre de poussée recule, la voile 
+\begin_inset Quotes qld
+\end_inset
+
+chalute
+\begin_inset Quotes qrd
+\end_inset
+
+ et les rangs A sont, en proportion, moins sollicités qu'ils ne devraient
+ l'être.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+C'est pourquoi la norme devrait prévoir un palier conséquent (5 s) à vitesse
+ constante et stabilisée.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La norme n'est pas adaptée aux conditions de vol biplace usuelles.
+ Dans une prochaine révision de la norme il faudrait imposer 
+\emph on
+les deux conditions
+\emph default
+ :
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+un palier de 5 s avec 
+\emph on
+vitesse et charge (vraiment) stabilisés
+\emph default
+ à 8g, (pour simuler un vol droit 
+\begin_inset Quotes qld
+\end_inset
+
+tranquille
+\begin_inset Quotes qrd
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+5 pics à 10g, (pour simuler un vol à 
+\begin_inset Quotes qld
+\end_inset
+
+sensations fortes
+\begin_inset Quotes qrd
+\end_inset
+
+)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Pour aller plus loin :
+\end_layout
+
+\begin_layout Itemize
+Si l'on veut lever les ambiguités et analyser plus finement des résultats
+ de tests, il faudrait à minima disposer 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+de l'enregistrement numérique de la vitesse du bord d'attaque du parapente
+ et 
+\end_layout
+
+\begin_layout Itemize
+de l'enregistrement (sous forme numérique) de la charge aux points d'ancrage,
+\end_layout
+
+\begin_layout Itemize
+optionnellement de l'enregistrement de la vitesse du camion.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Les aspects dynamiques (oscillations de la charge) sont d'une grande importance
+ pour répondre aux questions posées.
+ L'analyse de ces problèmes pourrait faire l'objet d'une étude théorique
+ et expérimentale sérieuse.
+\end_layout
+
+\begin_layout Section
+Annexes
+\end_layout
+
+\begin_layout Subsection
+Données relevées sur les graphiques
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Données-relevées"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset listings
+lstparams "language=Python,float"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+D = dict(
+\end_layout
+
+\begin_layout Plain Layout
+
+        Turquoise = [900.00,#longueur de la piste
+\end_layout
+
+\begin_layout Plain Layout
+
+            #(nom, t0,t1,t2,t3,fmax (N))
+\end_layout
+
+\begin_layout Plain Layout
+
+            [('BiGolden 4 light', 43, 72, 77, 83, 16797.),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Windtech Ru-Bi 2',  48, 78, 82, 92, 17739.59),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Supair Sora 2',     18, 43, 51, 57, 17360.56),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Supair Sora 1-41',  10, 55, 58, 62, 1739*9.81),]
+\end_layout
+
+\begin_layout Plain Layout
+
+                    ],
+\end_layout
+
+\begin_layout Plain Layout
+
+        Aérotest = [1700.00,
+\end_layout
+
+\begin_layout Plain Layout
+
+            [('Hercules',        6, 54, 61, 63, 22840),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('MacPara Trike 42', 7, 51, 56, 58, 20850),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Stewart',          0, 36, 43, 45, 1760*9.81),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Stewart-DGAC',     7, 27, 34, 35, 2500*9.81),
+\end_layout
+
+\begin_layout Plain Layout
+
+            ('Shuttle',         15, 49, 59, 60, 2500*9.81),]
+\end_layout
+
+\begin_layout Plain Layout
+
+                    ]
+\end_layout
+
+\begin_layout Plain Layout
+
+            )
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Evaluation de la vitesse nécessaire 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ pour atteindre la charge prescrite 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cas linéaire à un seul palier
+\end_layout
+
+\begin_layout Standard
+On ne considère que la phase de 
+\begin_inset Quotes qld
+\end_inset
+
+montée en charge
+\begin_inset Quotes qrd
+\end_inset
+
+, on ignore le 
+\begin_inset Quotes qld
+\end_inset
+
+plateau
+\begin_inset Quotes qrd
+\end_inset
+
+ et la 
+\begin_inset Quotes qld
+\end_inset
+
+décélération
+\begin_inset Quotes qrd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On fait les hypothèses suivantes : 
+\end_layout
+
+\begin_layout Enumerate
+la force 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ dépend linéairement du temps, à partir de 
+\begin_inset Formula $t=0$
+\end_inset
+
+ jusqu'au temps 
+\begin_inset Formula $t_{m}$
+\end_inset
+
+.
+ La valeur de 
+\begin_inset Formula $t_{m}$
+\end_inset
+
+ se lit sur les graphiques des montées en charge.
+\end_layout
+
+\begin_layout Enumerate
+l'incidence 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ du parapente est constante tout au long du run, (hypothèse abusive !)
+\end_layout
+
+\begin_layout Enumerate
+La vitesse de la voile est égale à la vitesse du camion (hypothèse abusive
+ !).
+\end_layout
+
+\begin_layout Enumerate
+La longueur de roulage (appelée 
+\begin_inset Formula $L_{u}$
+\end_inset
+
+ pour 
+\begin_inset Quotes qld
+\end_inset
+
+longueur utile
+\begin_inset Quotes qrd
+\end_inset
+
+) pour atteindre la vitesse 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ est inconnue, mais estimée (cf.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Longueur-de-piste-utile"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Reprenant l'équation 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "eq:F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ (1) :
+\end_layout
+
+\begin_layout Itemize
+l'hypothèse 2.
+ implique que le coefficient aérodynamique 
+\begin_inset Formula $C_{\alpha}=\sqrt{C_{x}^{2}\left(t\right)+C_{z}^{2}\left(t\right)}$
+\end_inset
+
+ ne dépend pas du temps, mais seulement de l'incidence 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, constante.
+ Donc
+\begin_inset Formula 
+\begin{equation}
+F\left(t\right)=\frac{1}{2}\rho SV^{2}\left(t\right)C_{\alpha}\label{eq:F-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+l'hypothèse 1.
+ peut se formaliser par : 
+\begin_inset Formula 
+\begin{equation}
+F\left(t\right)=F_{m}\frac{t}{t_{m}}\label{eq:F-linéaire}
+\end{equation}
+
+\end_inset
+
+ de sorte que 
+\begin_inset Formula $F$
+\end_inset
+
+ varie bien linéairement de 
+\begin_inset Formula $F\left(0\right)$
+\end_inset
+
+ à 
+\begin_inset Formula $F\left(t_{m}\right)=F_{m}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+On déduit de ces deux équations, la valeur de la vitesse
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+On notera que cette loi des vitesses impose une accélération 
+\begin_inset Formula $\gamma\left(t\right)=\frac{V_{m}}{\sqrt{tt_{m}}}$
+\end_inset
+
+, qui impose une force d'inertie 
+\begin_inset Formula $F_{i}\left(t\right)=m\gamma\left(t\right)$
+\end_inset
+
+ sur la voilure, décroissante au cours du temps, ce qui rend caduque l'hypothèse
+ de l'incidence constante.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+V_{m} & = & \sqrt{\frac{2F_{m}}{\rho SC_{\alpha}}}\\
+V\left(t\right) & = & V_{m}\sqrt{\frac{t}{t_{m}}}
+\end{eqnarray*}
+
+\end_inset
+
+et en intégrant de 
+\begin_inset Formula $0$
+\end_inset
+
+ à 
+\begin_inset Formula $t_{m}$
+\end_inset
+
+ on calcule la loi horaire (position du camion) 
+\begin_inset Formula $X\left(t\right)=\int_{0}^{t}V\left(s\right)ds$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+X\left(t\right) & = & \frac{2V_{m}}{3\sqrt{t_{m}}}t^{\frac{3}{2}}\\
+X\left(t_{m}\right) & = & \frac{2}{3}V_{m}t_{m}
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $X\left(t_{m}\right)=L_{u}$
+\end_inset
+
+ est la distance de roulage évaluée, donc 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\frac{2}{3}V_{m}t_{m}=L_{u}$
+\end_inset
+
+ puis 
+\begin_inset Formula 
+\begin{equation}
+V_{m}=\frac{3}{2}\frac{L_{u}}{t_{m}}\label{eq:modele-linéaire-1palier}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Cas linéaire, à trois paliers
 \end_layout
 
 \begin_layout Standard
@@ -1790,6 +4275,8 @@ l'effort
 
 \begin_layout Itemize
 et les coefficients aérodynamiques restent constants tout au long du test,
+ ce qui revient à négliger les déformations aéro-élastiques dans la voilure
+ et le suspentage.
  
 \end_layout
 
@@ -1837,6 +4324,7 @@ V_{m}\times\sqrt{\frac{t_{3}-t}{t_{3}-t_{2}}} & \text{ si }t\in\left[t_{2},t_{3}
 \begin_layout Standard
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1895,7 +4383,7 @@ noprefix "false"
 )
 \begin_inset Formula 
 \begin{equation}
-X\left(t_{3}\right)=\frac{V_{m}\left(2t_{3}+t_{2}-t_{1}\right)}{3}\label{eq:distance totale}
+D=X\left(t_{3}\right)=\frac{V_{m}\left(2t_{3}+t_{2}-t_{1}\right)}{3}\label{eq:dist-modele-lineaire-3paliers}
 \end{equation}
 
 \end_inset
@@ -1908,16 +4396,595 @@ X\left(t_{3}\right)=\frac{V_{m}\left(2t_{3}+t_{2}-t_{1}\right)}{3}\label{eq:dist
 \begin_inset Formula $t_{3}$
 \end_inset
 
- sont prélevés sur le graphique, tandis que la distance totale 
-\begin_inset Formula $X\left(t_{3}\right)$
+ sont prélevés sur le graphique, tandis que la distance totale est au plus
+ égale à la longueur de la piste 
+\begin_inset Formula $D=X\left(t_{3}\right)<D_{m}$
 \end_inset
 
- est au plus égale à la longueur de la piste.
- On obtient les résultats suivants : 
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+En régime de croisière 
+\end_layout
+
+\begin_layout Standard
+Vitesse stabilisée, pas d'accélération, les équations de l'équilibre d'un
+ parapente en soufflerie, avec une approximation 2d sont : 
+\begin_inset Formula 
+\begin{eqnarray*}
+qSC_{x}-F_{x} & = & 0\\
+qSC_{z}-F_{z} & = & 0\\
+\begin{array}{c}
+\tilde{l}C_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alpha\right)\left(sC_{x}+c\tilde{l}C_{z}\right)\end{array} & = & 0
+\end{eqnarray*}
+
+\end_inset
+
+ où 
+\begin_inset Formula $q=\frac{1}{2}\rho\vinf^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+ est la masse volumique de l'air, 
+\begin_inset Formula $S$
+\end_inset
+
+ la surface à plat de la voile, 
+\begin_inset Formula $\vinf$
+\end_inset
+
+ est la vitesse de la soufflerie, 
+\begin_inset Formula $\left(F_{x},F_{z}\right)$
+\end_inset
+
+ les coordonnées de 
+\begin_inset Formula $F_{max}$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{l}$
+\end_inset
+
+ est la corde moyenne, 
+\begin_inset Formula $c$
+\end_inset
+
+ est le calage , 
+\begin_inset Formula $s$
+\end_inset
+
+ la longueur du cône de suspentage, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ est l'incidence et les coefficients aérodynamiques 
+\begin_inset Formula $C_{m},C_{x}$
+\end_inset
+
+ et 
+\begin_inset Formula $C_{z}$
+\end_inset
+
+ sont des fonctions de 
+\begin_inset Formula $\alpha$
+\end_inset
+
+, du même ordre de grandeur pour tous les parapentes actuels.
+ Ces trois fonctions sont connues, ou bien données par simulation numérique.
+\end_layout
+
+\begin_layout Enumerate
+La troisième équation permet le calcul de l'incidence 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ En première approximation, on peut la linéariser car l'incidence de l'ordre
+ de 
+\begin_inset Formula $\alpha\sim5\,°\sim0.0873$
+\end_inset
+
+ degrés, ce qui autorise les approximations classiques 
+\begin_inset Formula $\sin\left(\alpha\right)\sim\alpha$
+\end_inset
+
+ et 
+\begin_inset Formula $\cos\left(\alpha\right)\sim1$
+\end_inset
+
+.
+ On obtient ainsi :
+\begin_inset Formula 
+\[
+\begin{array}{c}
+\tilde{l}C_{m}+\left(s-\alpha c\tilde{l}\right)C_{x}+\left(c\tilde{l}-\alpha s\right)C_{z}\end{array}=0
+\]
+
+\end_inset
+
+Il est remarquable que cette équation ne dépend en aucune façon ni de la
+ vitesse, ni de la charge.
+ L'incidence 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ et la finesse 
+\begin_inset Formula $\varphi=\frac{C_{z}}{C_{x}}$
+\end_inset
+
+, sont donc indépendants de 
+\begin_inset Formula $\vinf$
+\end_inset
+
+ et de 
+\begin_inset Formula ${\bf F}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Avec les deux premières équations, on obtient facilement 
+\begin_inset Formula $\frac{F_{z}}{F_{x}}=\frac{C_{z}}{C_{x}}$
+\end_inset
+
+ qui est la finesse du parapente, que l'on notera 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Cette finesse varie peu quand la charge varie.
+ On peut supposer que les déformations de la voilure augmentent légèrement
+ la traînée, et donc pénalise légèrement la finesse.
+ Les finesses annoncées pour les parapentes modernes sont de l'ordre de
+ 10, disons 
+\begin_inset Formula $\varphi\sim10,$
+\end_inset
+
+ soit 
+\begin_inset Formula $\frac{F_{z}}{F_{x}}=10$
+\end_inset
+
+, la composante verticale de l'effort est de 
+\begin_inset Formula $F_{z}=10F_{x}$
+\end_inset
+
+, donc approximativement : 
+\begin_inset Formula 
+\begin{align*}
+F_{z} & \sim\frac{9}{10}F_{max}\\
+F_{x} & \sim\frac{1}{10}F_{max}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour un biplace, 
+\begin_inset Formula $F_{max}\sim2000\,kgf$
+\end_inset
+
+ donc la composante verticale doit être 
+\begin_inset Formula $F_{z}\sim1,8\,T$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Prise en compte des oscillations
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+En comptant les nombre d'oscillation par tranche de 10 s, on trouve presque
+ systématiquement dans tous les graphiques,
+\end_layout
+
+\begin_layout Itemize
+le nombre d'oscillations varie entre 6 et 11 par tranche
+\end_layout
+
+\begin_layout Itemize
+le nombre d'oscillation par tranche augmente avec le temps (la vitesse ?)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+On fait les hypothèses suivantes :
+\end_layout
+
+\begin_layout Itemize
+le graphique se décompose en trois zones (cf 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Approximation-F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+l'effort 
+\begin_inset Formula $F\left(t\right)$
+\end_inset
+
+ sur la voilure varie linéairement de 
+\begin_inset Formula $0$
+\end_inset
+
+ à 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ (zone 1), puis reste constant (zone 2), puis diminue linéairement de 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ à 
+\begin_inset Formula $0$
+\end_inset
+
+ (zone 3), 
+\end_layout
+
+\begin_layout Itemize
+et les coefficients aérodynamiques restent constants tout au long du test,
+ ce qui revient à négliger les déformations aéro-élastiques dans la voilure
+ et le suspentage.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+les efforts se décomposent alors en : 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{align*}
+F\left(t\right) & =\begin{cases}
+F_{m}\frac{t}{t_{1}}, & \text{ si }t\in\left[0,t_{1}\right]\\
+F_{m} & \text{ si }t\in\left[t_{1},t_{2}\right]\\
+F_{m}\frac{t_{3}-t}{t_{2}-t_{3}} & \text{ si }t\in\left[t_{2},t_{3}\right]
+\end{cases}
+\end{align*}
+
+\end_inset
+
+La formule 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:F"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ permet d'évaluer la vitesse en fonction du temps :
+\begin_inset Formula 
+\begin{align*}
+V\left(t\right) & =\begin{cases}
+V_{m}\times\sqrt{\frac{t}{t_{1}}}, & \text{ si }t\in\left[0,t_{1}\right]\\
+V_{m} & \text{ si }t\in\left[t_{1},t_{2}\right]\\
+V_{m}\times\sqrt{\frac{t_{3}-t}{t_{3}-t_{2}}} & \text{ si }t\in\left[t_{2},t_{3}\right]
+\end{cases}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename dessin-1.svg
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Approximation de la courbe des efforts (Sora2-42)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Approximation-F"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Avec une accélération constante 
+\begin_inset Formula ${\bf a}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Une force d'inertie 
+\begin_inset Formula $F_{i}=-m\a$
+\end_inset
+
+ apparaît, qui s'exerce au centre de gravité du parapente (donc à proximité
+ de la voilure, à l'intrados).
+ La prise en compte de cette force d'inertie amène les termes correctifs
+ suivants dans les équations :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{eqnarray*}
+q\vinf^{2}C_{x}-F_{m}\sin\left(\alpha\right)+ma & = & 0\\
+q\vinf^{2}C_{z}-F_{m}\cos\left(\alpha\right) & = & 0\\
+q\vinf^{2}\left(\begin{array}{c}
+bC_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alpha\right)\left(sC_{x}+c\tilde{l}C_{z}\right)\end{array}\right)-m\sin\left(\alpha\right)c\tilde{l}a & = & 0
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+q\vinf^{2}C_{x}-F_{x}+ma & = & 0\\
+q\vinf^{2}C_{z}-F_{z} & = & 0\\
+\begin{array}{c}
+\tilde{l}C_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alpha\right)\left(sC_{x}+c\tilde{l}C_{z}\right)\end{array}-m\sin\left(\alpha\right)c\tilde{l}a & = & 0
+\end{eqnarray*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-protocole de test en charge
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Longueur-de-piste-utile"
+
+\end_inset
+
+Longueur de piste utile
+\end_layout
+
+\begin_layout Standard
+On se place dans l'hypothèse d'un test biplace, à 
+\begin_inset Formula $V_{m}>100\,km/h=27.7\,m/s$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Une étude attentive des graphiques d'Aérotest montre que le temps de lever
+ de voile et de stabilisation est de l'ordre de 
+\begin_inset Formula $10\,s$
+\end_inset
+
+, durant lesquelles la distance de piste consommée est estimée entre 
+\begin_inset Formula $100\,m$
+\end_inset
+
+ et 
+\begin_inset Formula $150\,m$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Le camion de Aérotest roule pendant environ 
+\begin_inset Formula $8\,s$
+\end_inset
+
+ à 
+\begin_inset Formula $10\,s$
+\end_inset
+
+, à vitesse 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+, approximativement constante, il parcourt donc 
+\begin_inset Formula $250\,m$
+\end_inset
+
+ à 
+\begin_inset Formula $300\,m$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+La distance d'arrêt d'un véhicule roulant à la vitesse 
+\begin_inset Formula $V\,m/s$
+\end_inset
+
+ et décélérant à 
+\begin_inset Formula $\gamma\,m/s^{2}$
+\end_inset
+
+ est (en mètres)
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+La distance d'arrêt d'un véhicule ne dépend pas de son poids, et un consensus
+ semble se dégager pour estimer cette distance à environ 
+\begin_inset Formula $50$
+\end_inset
+
+ à 
+\begin_inset Formula $100\,m$
+\end_inset
+
+ pour un vehicule lancé à 
+\begin_inset Formula $100\,km/h$
+\end_inset
+
+, (non compris le temps de réaction du chauffeur).
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D=\frac{V^{2}}{2\gamma}
+\]
+
+\end_inset
+
+Un véhicule de tourisme doit normalement avoir une capacité de décélération
+ de 
+\begin_inset Formula $5.8\,m/s^{2}$
+\end_inset
+
+ selon la norme.
+ Nous admettons que le camion chargé de Aérotest décélère entre 
+\begin_inset Formula $5$
+\end_inset
+
+ et 
+\begin_inset Formula $10\,m/s{}^{2}$
+\end_inset
+
+ (une formule 1 décélère à 
+\begin_inset Formula $20\,m/s^{2}$
+\end_inset
+
+, une voiture de tourisme standard à 
+\begin_inset Formula $8\,m/s^{2}$
+\end_inset
+
+).
+ 
+\begin_inset Newline newline
+\end_inset
+
+Les graphiques d'Aérotest montrent que le camion freine entre 
+\begin_inset Formula $8$
+\end_inset
+
+ et 
+\begin_inset Formula $10\,s$
+\end_inset
+
+.
+ Pour un test de biplace on a donc une distance d'arrêt de 
+\begin_inset Formula $50\,m$
+\end_inset
+
+ à 
+\begin_inset Formula $100\,m$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Vincent Teulier (Aérotest) estime sa distance d'arrêt à une centaine de
+ mètres au maximum.
+\end_layout
+
+\begin_layout Enumerate
+Finalement, compte tenu du levé de voile, de la phase à vitesse 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ et de l'arrêt complet, le camion aura consommé entre 
+\begin_inset Formula $400\,m$
+\end_inset
+
+ et 
+\begin_inset Formula $550\,m$
+\end_inset
+
+ de piste.
+\end_layout
+
+\begin_layout Standard
+La longueur de piste disponible pour la montée en charge est donc 
+\begin_inset Formula $L_{u}=1700-475=1225\pm75\,m$
+\end_inset
+
+ pour Aérotest, et 
+\begin_inset Formula $L_{u}=900-475=425\pm75\,m$
+\end_inset
+
+ pour Air Turquoise.
+\end_layout
+
+\begin_layout Subsection
+Protocole de test en charge
 \begin_inset CommandInset label
 LatexCommand label
 name "Protocole"
@@ -2051,7 +5118,7 @@ filename "maxima_trajectoires.tex"
 \end_layout
 
 \begin_layout Subsection
-liens
+Liens et références
 \end_layout
 
 \begin_layout Standard
@@ -2184,6 +5251,61 @@ literal "false"
 \begin_inset CommandInset label
 LatexCommand label
 name "rapport Sora2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Notice d'utilisation Sora2"
+target "https://www.supair.com/document/notices/notice_SORA2_FR.pdf"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Notice Sora2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conversions
+\end_layout
+
+\begin_layout Enumerate
+Pour convertir une charge de kilogrammes en Newtons : 
+\begin_inset Formula 
+\[
+x_{N}=x_{kg}\times9.81
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Pour convertir une vitesse de km/h en m/s :
+\begin_inset Formula 
+\[
+x_{m/s}=x_{km/h}\times0.28
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+x_{km/h}=x_{m/s}\times3.6
+\]
 
 \end_inset
 
