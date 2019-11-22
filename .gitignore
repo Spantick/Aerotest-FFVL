@@ -4,3 +4,5 @@
 *.pyc
 *.lyx#
 __pycache__/
+*.lyx~
+rapport-backup/*

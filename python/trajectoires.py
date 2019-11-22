@@ -31,55 +31,11 @@ def toLaTeX(boite, bis) :
     lines.append("\\noalign{\\vskip0.1cm}")
     lines.append(hline) 
     for bi in bis :
-        # lines.append(hline) 
         lines.append(dataLine(bi))
     lines.append(hline) 
     
     lines.append("\\end{tabular}")
     return '\n'.join(lines)
-
-
-
-def run4() :
-    """
-    """
-    def Vmax(t1,t2,t3,L) : 
-        return ms2Kmh(3*L/(2*t3+t2-t1))
-    
-    def toText(boite, L, bis) :
-        print ("\n"+(len(boite)*'=') + '\n' + "%s"%boite+'\n' + len(boite)*'=' + '\n')
-
-        hline = 4*' '+65*'-'
-        print(hline)
-        print('    Modèle               : t1   : t2   : t3   : Vmax    : Fmax    : 𝛾1    :')
-        print(hline)
-        for bi in bis : 
-            name, t0, t1, t2, t3, fmax = bi
-            t1 -= t0
-            t2 -= t0
-            t3 -= t0
-            vmax = Vmax(t1,t2,t3, L)
-            gam1 = vmax/t1
-            # gam3 = -vmax/(t3-t2)
-            print('    %-20s :'%name, end='')#---------------------
-            print(" %-4.0f :"%(t1),end='')
-            print(" %-4.0f :"%(t2),end='')
-            print(" %-4.0f :"%(t3),end='')
-            print(" %-7.1f :"%(vmax),end='')
-            print(" %-7.1f :"%(fmax),end='')
-            print(" %-5.1f :"%(gam1),end='')
-            # print(" %-5.1f :"%(gam3),end='')
-            print()
-        print(hline)
-    
-    for boite, (L,bis) in D.items() : 
-        toText(boite, L,    bis)
-    print()
-    print()
-    # for boite, bis in D.items() :
-    #     print() 
-    #     print() 
-    #     print(toLaTeX(boite, bis))
 
 class Trajectoire():
     #Valeurs par défaut
@@ -165,63 +121,6 @@ class Trajectoire():
             T3 = integrate.quad(self.Cv,self.t2,t,limit=100)[0]
             return T1+T2+T3
 
-    # def plotF(self):
-    #     n = 1000
-    #     T = np.linspace(0.0, self.t3, n)
-    #     F = asarray([self.F(t) for t in T])
-    #     fig, ax = plt.subplots()
-    #     plt.plot(T,F)
-    #     ax.set_title("%s, modélisation de la force appliquée"%self.name)
-    #     plt.plot([0.0, self.t1,self.t2,self.t3],[0.0,self.Fmax,self.Fmax,0],
-    #         'k--',linewidth=0.4)
-    #     # plt.plot([self.t1],[0.0,self.Fmax])
-    #     plt.plot([self.t1, self.t1],[0.0,self.Fmax])
-    #     plt.plot([self.t2, self.t2],[0.0,self.Fmax])
-    #     ax.grid(True)
-    #     plt.xlabel('$time (s)$')
-    #     plt.ylabel('$force (N)$')
-    #     plt.show()
-    
-    # def plotV(self):
-    #     n = 1000
-    #     T = np.linspace(0.0, self.t3, n)
-    #     V = asarray([self.Cv(t) for t in T])
-    #     # fig, ax = plt.subplots()
-    #     plt.title("%s, modélisation de la vitesse"%self.name)
-    #     plt.grid(True)
-    #     plt.plot(T,V)
-    #     self.Vmax = 1.0
-    #     plt.plot([0.0, self.t1,self.t2,self.t3],[0.0,self.Vmax,self.Vmax,0],
-    #         'k--',linewidth=0.4)
-    #     # plt.plot([self.t1],[0.0,self.Fmax])
-    #     plt.plot([self.t1, self.t1],[0.0,self.Vmax])
-    #     plt.plot([self.t2, self.t2],[0.0,self.Vmax])
-    #     # ax.grid(True)
-    #     plt.xlabel('$time (s)$')
-    #     plt.ylabel('coefficient de vitesse (sans dimension)')
-    #     plt.show()
-    
-    # def plotX(self):
-    #     n = 100
-    #     T = np.linspace(0.0, self.t3, n)
-    #     X = asarray([self.X(t) for t in T])
-    #     print('X=',X.shape)
-    #     # fig, ax = plt.subplots()
-    #     plt.title("%s, modélisation de la trajectoire ($V_{max}=%.1f km/h$)"%(self.name,3.6*self.Vmax))
-    #     plt.grid(True)
-    #     plt.plot(T,X)
-    #     # self.Vmax = 1.0
-    #     # plt.plot([0.0, self.t1,self.t2,self.t3],[0.0,self.Vmax,self.Vmax,0],
-    #         # 'k--',linewidth=0.4)
-    #     # plt.plot([self.t1],[0.0,self.Fmax])
-    #     plt.plot([self.t1, self.t1],[0.0,self.X(self.t1)],'k--')
-    #     plt.plot([self.t2, self.t2],[0.0,self.X(self.t2)],'k--')
-    #     plt.plot([self.t3, self.t3],[0.0,self.X(self.t3)],'k--')
-    #     # ax.grid(True)
-    #     plt.xlabel('$time (s)$')
-    #     plt.ylabel('distance (m)')
-    #     plt.show()
-    
     def plot(self):
         n = 1000
         T = np.linspace(0.0, self.t3, n)
@@ -261,21 +160,10 @@ class Trajectoire():
         plt.subplot(224)
         plt.grid(False)
         plt.axis([0, 10, 0, 10])
-        # for msg in enumerate(self.LaTeX()) : 
-        #     plt.text(1, i+1)
         msg = '\n'.join(self.LaTeX())
         print(msg)
         plt.text(0.3,0.5,msg,{'color': 'black', 'fontsize': 12}, horizontalalignment='left',clip_on=True, multialignment="left")
         plt.setp(plt.gca(), frame_on=False, xticks=(), yticks=())
-        # plt.text(1.02, 0.5, r"\bf{level set} $\phi$", {'color': 'C2', 'fontsize': 20},
-        #          horizontalalignment='left',
-        #          verticalalignment='center',
-        #          rotation=90,
-        #          clip_on=False,
-        #          transform=plt.gca().transAxes)
-        # plt.text(0, 0.1, r'$\delta$',
-        #  {'color': 'black', 'fontsize': 24, 'ha': 'center', 'va': 'center',
-        #   'bbox': dict(boxstyle="round", fc="white", ec="black", pad=0.2)})
         fig.suptitle('%s : modélisation force, vitesse, trajectoire'%self.name, fontsize=16)
 
 
@@ -291,9 +179,9 @@ class Trajectoire():
         ('$(t_0, t_1, t_2, t_3)$', (self.t0, self.t1+self.t0,self.t2+self.t0,self.t3+self.t0),'$s$'),
         ]
         if 'lin' in self.options or self.A == 0:
-            msgs.insert(3,('Modélisation', 'Linéaire par palier', ''))
+            msgs.insert(3,('Modélisation', 'linéaire par palier', ''))
         else:#if 'sin' in self.options and self.A != 0:
-            msgs.insert(3,('Modélisation', 'Sinusoïdale par palier', ''))
+            msgs.insert(3,('Modélisation', 'sinusoïdale par palier', ''))
             msgs.insert(6,('Coeff d\'Amplitude $\\sin$', self.A, ''))
             msgs.insert(8,('$\\omega$', self.om, '$s^{-1}$'))
         # ('$(k_1, k2, k3)$', (round(self.k1/(2*pi),1),round(self.k2/(2*pi),1),round(self.k3/(2*pi),1))),
@@ -347,7 +235,7 @@ if __name__ == '__main__' :
     - Fmax est la charge exigée par la norme
     """
     #valable pour tous
-    P0 = dict(options='sin', om=2, A=0.0)
+    P0 = dict(options='sin', om=4, A=0.125)
 
     #Pour Aérotest uniquement
     P = dict(operator='Aérotest', L=1600)
@@ -367,24 +255,13 @@ if __name__ == '__main__' :
                 Trajectoire(name='BiGolden 4 light', t0=43, t1=72, t2=77, t3=83, Fmax=round(16797.,1), **P, **P0),
                 Trajectoire(name='Windtech Ru-Bi 2', t0=48, t1=78, t2=82, t3=92, Fmax=round(17739.59,1), **P, **P0),
                 ]
-    # #Si Turquoise allait à 10g :
-    # P = dict(L=800, operator='Turquoise-2')
-    # Turquoise2 = [
-    #             Trajectoire(name='Sora 0',    t0=18, t1=43, t2=51, t3=57, Fmax=round(17360.56,1), **P, **P0),
-    #             Trajectoire(name='Sora 1',    t0=18, t1=43, t2=51, t3=57, Fmax=round(2*17360.56,1), **P, **P0),
-    #             Trajectoire(name='Sora 2',    t0=18, t1=43, t2=51, t3=57, Fmax=round(3*17360.56,1), **P, **P0),
-    #             # Trajectoire(name='Supair Sora 1-41', t0=10, t1=55, t2=58, t3=62, Fmax=round((10/8)*1739*9.81,1), **P, **P0),
-    #             # Trajectoire(name='BiGolden 4 light', t0=43, t1=72, t2=77, t3=83, Fmax=round((10/8)*16797.,1), **P, **P0),
-    #             # Trajectoire(name='Windtech Ru-Bi 2', t0=48, t1=78, t2=82, t3=92, Fmax=round((10/8)*17739.59,1), **P, **P0),
-    #             ]
+    
     for i, T in enumerate(AeroTest) :
         pass
         print("%s"%T)
-        # print(T.X(T.t3))
-        # if i>=10 : T.plot()
+        if i>=0 : T.plot()
     for i, T in enumerate(Turquoise) :
         print("%s"%T)
-        # print(T.X(T.t3))
-        if i>=10 : T.plot()
+        if i>=0 : T.plot()
 
 
