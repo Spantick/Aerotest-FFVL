@@ -4484,6 +4484,213 @@ Les aspects dynamiques (oscillations de la charge) sont d'une grande importance
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+Réflexions ultimes
+\end_layout
+
+\begin_layout Standard
+A bien y réfléchir il me semble que c'est le couple camion-parapente qui
+ crée l'instabilité et les oscillations observées sur les graphiques.
+ 
+\end_layout
+
+\begin_layout Standard
+En effet, une accélération du camion a pour effet d'augmenter l'incidence
+ de la voile, qui augmente donc sa traînée, laquelle, en retour, décélère
+ le camion.
+ Ce qui a pout effet une diminution d'incidence qui diminue la traînée,
+ qui a pour effet d'accélérer le camion etc..
+\end_layout
+
+\begin_layout Standard
+Un parapente en soufflerie, même avec une accélération 
+\begin_inset Formula $a$
+\end_inset
+
+ constante du flux d'air, ne se mettrait pas à osciller car la variation
+ d'incidence et de traînée dûe à l'accélération ne change pas en retour
+ la valeur de l'accélération de la soufflerie.
+ La traînée additionnelle reste constante, proportionnelle à l'accélération
+ 
+\begin_inset Formula $a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Il devrait être possible de maintenair une vitesse du camion constante 
+\begin_inset Formula $=V_{m}$
+\end_inset
+
+ de sorte que le système s'équilibre et que la vitesse de la voilure s'équilibre
+ elle aussi à 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Essayons de préciser.
+\end_layout
+
+\begin_layout Standard
+Dans un repère fixe 
+\begin_inset Formula $\mathscr{R}$
+\end_inset
+
+ (galiléen) lié au sol, supposons que la voile est déjà montée, et que le
+ système camion-voile, à un instant 
+\begin_inset Formula $t$
+\end_inset
+
+, navigue à vitesse 
+\begin_inset Formula $v\left(t\right)$
+\end_inset
+
+ constante, la voile est à l'incidence 
+\begin_inset Formula $\alpha\left(t\right)$
+\end_inset
+
+.
+ La vitesse du camion est 
+\begin_inset Formula $v\left(t\right)$
+\end_inset
+
+, la vitesse de la voile est 
+\begin_inset Formula $V\left(t\right)=v\left(t\right)+s\dot{\alpha}\left(t\right)$
+\end_inset
+
+ où 
+\begin_inset Formula $s$
+\end_inset
+
+ est la longueur du suspentage, 
+\begin_inset Formula $\dot{\alpha}$
+\end_inset
+
+ est la vitesse angulaire de la voile autour du point d'ancrage.
+ (Lorsque l'édifice est à l'équilibre, 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ est constant donc 
+\begin_inset Formula $\dot{\alpha}=0$
+\end_inset
+
+ ).
+ Supposons que le camion accélère d'une valeur 
+\begin_inset Formula $a\left(t\right)$
+\end_inset
+
+.
+ Entre les instants 
+\begin_inset Formula $t$
+\end_inset
+
+ et 
+\begin_inset Formula $t+dt$
+\end_inset
+
+ on a les phénomènes suivants :
+\end_layout
+
+\begin_layout Itemize
+1.
+ accélération 
+\begin_inset Formula $a\left(t\right)$
+\end_inset
+
+ du camion et du point d'ancrage augmentation de sa vitesse de 
+\begin_inset Formula $dv=a\left(t\right)dt$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+par inertie, la voilure recule par rapport à l'ancrage et son incidence
+ augmente de 
+\begin_inset Formula $d\alpha=\dot{\alpha}\left(t\right)dt$
+\end_inset
+
+.
+ (elle recule de 
+\begin_inset Formula $-sd\alpha$
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Itemize
+donc sa traînée varie de 
+\begin_inset Formula 
+\begin{align*}
+dT\left(t\right) & =\frac{1}{2}\rho SV\left(t\right)^{2}dC_{x}\left(\alpha\right)\\
+ & =\frac{1}{2}\rho S\left(v\left(t\right)+s\dot{\alpha}\left(t\right)\right)^{2}\dot{\alpha}\left(t\right)\frac{dC_{x}\left(\alpha\right)}{d\alpha}dt
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+cette trainée se transmet au point d'ancrage donc le camion ralenti d'une
+ valeur 
+\begin_inset Formula $da=\frac{dT}{m_{c}}<0$
+\end_inset
+
+.
+ Donc
+\begin_inset Formula 
+\begin{align*}
+\frac{da}{dt}\left(t\right) & =\ddot{v}\left(t\right)=\frac{1}{2}\rho S\left(v\left(t\right)+s\dot{\alpha}\left(t\right)\right)^{2}\dot{\alpha}\left(t\right)\frac{dC_{x}\left(\alpha\right)}{d\alpha}
+\end{align*}
+
+\end_inset
+
+où 
+\begin_inset Formula $m_{c}$
+\end_inset
+
+ est la masse du camion.
+ C'est une première équation différentielle du mouvement, reliant 
+\begin_inset Formula $v$
+\end_inset
+
+ et ses dérivées avec 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ et ses dérivées
+\end_layout
+
+\begin_layout Itemize
+On applique maintenant le même principe entre les temps 
+\begin_inset Formula $t+dt$
+\end_inset
+
+ et 
+\begin_inset Formula $t+2dt$
+\end_inset
+
+.
+ Il suffit de remplacer 
+\end_layout
+
+\begin_layout Itemize
+cette décélération affecte la voilure avec retard, qui continue sur sa lancée
+ par inertie et diminue son incidence donc sa traînée.
+ 
+\end_layout
+
+\begin_layout Itemize
+cette diminution de traînée se transmet au point d'ancrage, et retour en
+ 1
+\end_layout
+
 \begin_layout Section
 Annexes (données)
 \end_layout
