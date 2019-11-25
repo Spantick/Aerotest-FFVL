@@ -21,6 +21,10 @@
 #  kv => haut
 
 dict(
+  physique = dict(
+    rho = 1.2                       # masse volumique air
+    reynolds = 2.0E+6               # Reynolds
+  ),
   userdata=dict(
       d  = 0.0,                     # float, % de freins entre 0.0 et 100.0 [non implémenté]
       mp = 1750.0,                   # float, masse pilote
@@ -33,6 +37,7 @@ dict(
       Cxs = 0.01,                  # float, coefficient de traînée suspentage.
       alfas = 15.0,                 # float, incidence décrochage (stall)
       alfac = None,                 # float, incidence fermeture (collapse) Marche pas bien
+      rho = 1.2                     # masse volumique air
       ),                            # c'est tout ici
 
 #############################################################################
