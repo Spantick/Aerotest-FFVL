@@ -4508,11 +4508,11 @@ Un parapente en soufflerie, même avec une accélération
 \end_inset
 
  constante du flux d'air, ne se mettrait pas à osciller car la variation
- d'incidence et de traînée dûe à l'accélération ne change pas en retour
+ d'incidence et de traînée dûe à l'accélération ne modifie pas, en retour,
  la valeur de l'accélération de la soufflerie.
  La traînée additionnelle reste constante, proportionnelle à l'accélération
  
-\begin_inset Formula $a$
+\begin_inset Formula $\mathbf{a}$
 \end_inset
 
 .
@@ -4532,10 +4532,14 @@ Il devrait être possible de maintenair une vitesse du camion constante
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Essayons de préciser.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Dans un repère fixe 
 \begin_inset Formula $\mathscr{R}$
 \end_inset
@@ -4689,6 +4693,34 @@ cette décélération affecte la voilure avec retard, qui continue sur sa lancé
 \begin_layout Itemize
 cette diminution de traînée se transmet au point d'ancrage, et retour en
  1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le système camion-voile s'apparente à un oscillateur harmonique forcé.
+ La période d'un tel pendule est 
+\begin_inset Formula $\sqrt{\frac{l}{g}}$
+\end_inset
+
+.
+ Ici 
+\begin_inset Formula $l=s$
+\end_inset
+
+, longueur de suspentage.
+ Numériquement, on trouve 
+\begin_inset Formula 
+\[
+\sqrt{\frac{l}{g}}\simeq0.90\,s
+\]
+
+\end_inset
+
+ce qui correspond à la période des oscillations observées sur les graphiques.
 \end_layout
 
 \begin_layout Section
