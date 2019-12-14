@@ -721,7 +721,7 @@ N'ayant pas de diagramme de vitesse des véhicules, ni les enregistrements
 \end_layout
 
 \begin_layout Standard
-En effet, la charge qui s'applique au points d'ancrage sur le camion dépend
+En effet, la charge qui s'applique aux points d'ancrage sur le camion dépend
  du carré de la vitesse 
 \begin_inset Formula $V^{2}$
 \end_inset
@@ -745,8 +745,8 @@ Afin de répondre à la deuxième question, on a besoin d'évaluer la vitesse
 \end_layout
 
 \begin_layout Standard
-Dans le paragraphe suivant, on va tenter d'évaluer la vitesse maximale à
- partir du diagramme de test en charge.
+Dans le paragraphe suivant, on va tenter d'évaluer cette vitesse maximale
+ à partir du diagramme de test en charge.
 \end_layout
 
 \begin_layout Standard
@@ -817,31 +817,39 @@ Il faut en premier lieu noter que la vitesse du camion et celle de la voilure
 \end_layout
 
 \begin_layout Subsection
-Evaluation des vitesses à atteindre
+Evaluation des vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ à atteindre
 \end_layout
 
 \begin_layout Standard
-On note 
+L'effort total mesuré sur la voilure en fonction du temps 
 \begin_inset Formula $t$
 \end_inset
 
- le temps, 
-\begin_inset Formula $\rho\sim1,2kg/m^{3}$
+ est donné par la formule suivante, 
+\begin_inset Formula 
+\begin{equation}
+F\left(t\right)=\frac{1}{2}\rho SV_{v}^{2}\left(t\right)\sqrt{C_{x}^{2}\left(t\right)+C_{z}^{2}\left(t\right)}\label{eq:RFA(t)}
+\end{equation}
+
 \end_inset
 
- la densité de l'air, 
-\begin_inset Formula $S=42m^{2}$
+où 
+\begin_inset Formula $\rho$
+\end_inset
+
+ est la densité de l'air, 
+\begin_inset Formula $S$
 \end_inset
 
  la surface de la voilure, 
-\begin_inset Formula $V$
+\begin_inset Formula $V_{v}$
 \end_inset
 
- la vitesse en 
-\begin_inset Formula $m/s$
-\end_inset
-
-, 
+ la vitesse de la voile, 
 \begin_inset Formula $C_{z}$
 \end_inset
 
@@ -849,18 +857,94 @@ On note
 \begin_inset Formula $C_{x}$
 \end_inset
 
- les coefficients de portance et de traînée du parapente.
- Les coefficients de traînée et de portance sont généralement du même ordre
- de grandeur pour tous les parapentes du marché à une époque donnée, mais
- dépendent très sensiblement de l'incidence de vol 
+ les coefficients de portance et de traînée de la voile.
+ Ces coefficients sont généralement du même ordre de grandeur pour tous
+ les parapentes du marché à une époque donnée, mais dépendent très sensiblement
+ de l'incidence de vol 
 \begin_inset Formula $\alpha$
 \end_inset
 
-, ce qui aura son importance par la suite.
+, (qui lui même dépend du temps si la vitesse varie) ce qui aura son importance
+ par la suite.
+\end_layout
+
+\begin_layout Subsubsection
+Vitesse stabilisée
 \end_layout
 
 \begin_layout Standard
-En première approximation, on est tenté de raisonner ainsi :
+En annexe (cf 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "subsec:Evaluation-de-lavitesse-requise"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), on tente d'évaluer de deux manières la vitesse 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ que doit atteindre le véhicule pour parvenir à la charge prescrite, en
+ supposant la vitesse stabilisée.
+ 
+\end_layout
+
+\begin_layout Standard
+On trouve des vitesses de l'ordre de 
+\end_layout
+
+\begin_layout Itemize
+120 km/h dans un cas (basé sur les données du manuel utilisateur de la Sora2),
+ et 
+\end_layout
+
+\begin_layout Itemize
+300 km/h dans l'autre (plus fiable)
+\end_layout
+
+\begin_layout Itemize
+Une simulation numérique plus récente donne une valeur de 170 km/h pour
+ atteindre 2021 kg.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+En mode vitesse stabilisé, il faudrait que le véhicule roule à environ 200
+ km/h pour atteindre la charge requise.
+\end_layout
+
+\begin_layout Plain Layout
+Ces vitesses sont actuellement hors de portée des véhicules utilisés.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Vitesse non stabilisée
 \end_layout
 
 \begin_layout Standard
@@ -877,241 +961,11 @@ On note
 \end_layout
 
 \begin_layout Standard
-L'effort total mesuré sur la voilure en fonction du temps est donné par
- la formule suivante, 
-\begin_inset Formula 
-\begin{equation}
-F\left(t\right)=\frac{1}{2}\rho SV^{2}\left(t\right)\sqrt{C_{x}^{2}\left(t\right)+C_{z}^{2}\left(t\right)}\label{eq:F}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La force 
-\begin_inset Formula $F$
-\end_inset
-
- est donc proportionnelle au carré de la vitesse 
-\begin_inset Formula $V^{2}$
-\end_inset
-
-.
+Dans ce cas, on prend en compte les oscillations de la voile et du couple
+ véhicule-voile, le problème n'est pas élémentaire et demanderait une étude
+ approfondie.
+ On peut cependant faire quelques remarques.
  
-\begin_inset Formula 
-\[
-F=kV^{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ceci implique que pour atteindre 
-\begin_inset Formula $9$
-\end_inset
-
- fois la valeur du PTV maximal conseillé par le constructeur, la vitesse
- à atteindre est 
-\begin_inset Formula $3$
-\end_inset
-
- fois la vitesse maximale du parapente en condition normale.
- Les chiffres du constructeur sont PTV maximal = 
-\begin_inset Formula $220\,kg$
-\end_inset
-
-, et 
-\begin_inset Formula $V=40\,km/h$
-\end_inset
-
- on devrait donc rouler à 
-\begin_inset Formula $120\,km/h$
-\end_inset
-
-.
- Plus précisément : 
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-règle 
-\begin_inset Formula $3s>8g$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-règle 
-\begin_inset Formula $5\text{pics}>10g$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $F_{m}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1760\,kg$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2200\,kg$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $V_{m}\,\left(km/h\right)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $113.1$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $126.5$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Charges 
-\begin_inset Formula $F_{m}$
-\end_inset
-
- et vitesses 
-\begin_inset Formula $V_{m}$
-\end_inset
-
- requises, utilisant les données du manuel utilisateur du Sora2
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-On constate qu'avec ce modèle, les vitesses à atteindre sont plus élevées
- que les vitesses réellement atteintes chez 
-\begin_inset Formula $\ae$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Cette table des vitesses 
-\begin_inset Formula $V>V_{m}$
-\end_inset
-
- requises est donc à lire avec précaution, et ne constitue que des ordres
- de grandeur sur-évalués.
 \end_layout
 
 \begin_layout Itemize
@@ -1124,7 +978,7 @@ Des oscillations de la voile (donc des accélérations induisant des montées
 \begin_inset Formula $V_{m}$
 \end_inset
 
- indiquée.
+ requise du paragraphe précédent.
  Il est donc normal que les véhicules n'atteignent pas ces vitesses, bien
  qu'ils atteignent la charge requise.
 \end_layout
@@ -1158,6 +1012,44 @@ tranquille
 
  ne sont pas bien simulés par les tests.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+Admettre les oscillations de la vitesse et de la charge est la seule manière
+ d'atteindre les charges requises.
+\end_layout
+
+\begin_layout Plain Layout
+Ces oscillations sont essentiellement de nature 
+\emph on
+mécanique
+\emph default
+ et non pas aérodynamique (l'interaction entre camion et voile, induit des
+ forces d'inertie importantes).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1199,6 +1091,17 @@ Evaluation des vitesses effectivement atteintes par les camions
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+La vitesse nécessaire à atteindre la charge requise est donc inconnue, et
+ difficile à évaluer de manière réaliste et simple.
+ Dans cette partie, on tente d'évaluer, grâce aux graphiques disponibles,
+ les vitesses 
+\emph on
+réellement atteintes
+\emph default
+ par les véhicules.
 \end_layout
 
 \begin_layout Standard
@@ -1278,7 +1181,7 @@ Le principe de ce calcul est assez simple : connaissant la loi de variation
  (qui est proportionnelle à la racine carrée de l'effort cf 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:F"
+reference "eq:RFA(t)"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1401,7 +1304,7 @@ Quatre modes de détermination de la vitesse
 \begin_inset Formula $V_{m}$
 \end_inset
 
- sont ensuite étudiés : 
+ atteinte sont ensuite étudiés : 
 \begin_inset Note Note
 status collapsed
 
@@ -1529,7 +1432,7 @@ status collapsed
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1565,7 +1468,7 @@ Modélisation linéaire
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2942,7 +2845,7 @@ V_{m}=3\frac{L}{2t_{3}+t_{2}-t_{1}}
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -2985,7 +2888,7 @@ name "fig:Modélisation-linéaire par palier"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3026,7 +2929,7 @@ Les résultats sont les suivants
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3398,7 +3301,7 @@ Cette approche consiste à ajouter une fonction sinusoïdale au modèle linéair
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3455,7 +3358,7 @@ Les résultats pour des longueurs de piste
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3821,13 +3724,13 @@ Bilan intermédiaire
 \begin_layout Standard
 Pour exploiter les rares données dont on dispose on est obligé de faire
  des hypothèses simplificatrices et une modélisation du phénomène.
- Ces hypothèses n'apportent pas de réponses satisfaisantes.Il apparaît alors
- que le problème est 
+ Ces hypothèses n'apportent pas de réponses satisfaisantes.
+ Il apparaît alors que le problème est 
 \emph on
 essentiellement
 \emph default
  conditionné par les oscillations de la voilure au cours du run, et qu'il
- y a lieu de distinguer la vitesse du véhicule et celle de la voilure.
+ y a lieu de distinguer la vitesse du véhicule de celle de la voilure.
 \end_layout
 
 \begin_layout Standard
@@ -4032,7 +3935,7 @@ separation "3pt"
 shadowsize "4pt"
 framecolor "black"
 backgroundcolor "none"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Les phénomènes mis en jeu sont 
@@ -4330,8 +4233,9 @@ choix
 \emph on
 ou
 \emph default
- 5 pics>8g) mais imposer une seule condition : atteindre une 
-\begin_inset Formula $V_{m}$
+ 5 pics>8g) mais imposer une seule condition : atteindre une vitesse stabilisée
+ 
+\begin_inset Formula $V_{stab}$
 \end_inset
 
  (à définir), et s'y maintenir pendant un intervale de temps 
@@ -4366,9 +4270,10 @@ La distinction 8g / 10g devrait disparaître, ainsi que toute référence à
 \end_inset
 
 .
-\end_layout
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Itemize
+\begin_layout Plain Layout
 Je ne sais pas si des cas de voile instable se sont déjà présentés, mais
  si c'est le cas, la norme pourrait demander à la voile un comportement
  stable tant que la vitesse est inférieure à un 
@@ -4376,6 +4281,11 @@ Je ne sais pas si des cas de voile instable se sont déjà présentés, mais
 \end_inset
 
  à définir (peut-être la vitesse anoncée par le manuel utilisateur).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -4720,7 +4630,8 @@ Le système camion-voile s'apparente à un oscillateur harmonique forcé.
 
 \end_inset
 
-ce qui correspond à la période des oscillations observées sur les graphiques.
+ce qui correspond à la période des oscillations observées sur les graphiques,
+ en fin de montée en charge.
 \end_layout
 
 \begin_layout Section
@@ -5309,11 +5220,17 @@ NF-EN-026-1, édité par l'AFNOR
 \end_layout
 
 \begin_layout Section
-Annexes (scientifiques)
+Annexes (autres)
 \end_layout
 
 \begin_layout Subsection
-Evaluation de la vitesse nécessaire 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Evaluation-de-lavitesse-requise"
+
+\end_inset
+
+Evaluation de la vitesse requise 
 \begin_inset Formula $V_{m}$
 \end_inset
 
@@ -5321,7 +5238,630 @@ Evaluation de la vitesse nécessaire
 \begin_inset Formula $F_{m}$
 \end_inset
 
+ en mode stabilisé
+\end_layout
 
+\begin_layout Standard
+On évalue la vitesse qu'il faudrait atteindre en mode stationnaire, c'est
+ à dire en supposant la vitesse constante, et sans oscillations.
+ La vitesse du camion et la vitesse de la voile sont dans ce cas identiques.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Toutes les simulations numériques montrent que pour monter à une charge
+ de 2 tonnes il faut atteindre une vitesse supérieure à 200 km/h.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En vol droit, à vitesse 
+\begin_inset Formula $V$
+\end_inset
+
+ constante, la résultante des forces aérodynamiques sur la voile est 
+\begin_inset Formula 
+\begin{align}
+F & =\frac{1}{2}\rho V^{2}\sqrt{C_{z}^{2}+C_{x}^{2}}\label{eq:RFA}\\
+ & =\frac{1}{2}\rho V^{2}C_{z}\sqrt{1+\left(\frac{C_{x}}{C_{z}}\right)^{2}}\nonumber 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+En utilisant le manuel utilisateur 
+\end_layout
+
+\begin_layout Standard
+D'après la formule 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:RFA"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, la force 
+\begin_inset Formula $F$
+\end_inset
+
+ est proportionnelle au carré de la vitesse 
+\begin_inset Formula $V^{2}$
+\end_inset
+
+.
+ 
+\begin_inset Formula 
+\[
+F=kV^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ceci implique que pour atteindre 
+\begin_inset Formula $9$
+\end_inset
+
+ fois la valeur du PTV maximal conseillé par le constructeur, la vitesse
+ requise est 
+\begin_inset Formula $3$
+\end_inset
+
+ fois la vitesse maximale du parapente en condition normale.
+ 
+\end_layout
+
+\end_inset
+
+Les chiffres du constructeur sont PTV maximal : 
+\begin_inset Formula $F=220\,kg$
+\end_inset
+
+, et 
+\begin_inset Formula $V=40\,km/h$
+\end_inset
+
+.
+ On en déduit la valeur du coefficient 
+\begin_inset Formula $k$
+\end_inset
+
+ : 
+\begin_inset Formula 
+\[
+k=\frac{F}{V^{2}}\sim0.1375\,kg.\left(km/h\right)^{2}
+\]
+
+\end_inset
+
+ Pour atteindre les charges prescrites en mode stabilisé, on devrait donc
+ rouler à 
+\begin_inset Formula $120\,km/h$
+\end_inset
+
+ environ.
+ Plus précisément
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+En réalité, il s'agit d'une vitesse en vol, c'est à dire avec un pilote
+ et sa traînée.
+ Durant les tests en charge, la traînée pilote n'existe pas.
+ Donc les vitesses requises sont plus importantes que celles évaluées ici.
+\end_layout
+
+\end_inset
+
+ : 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $3s>8g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $5\text{pics}>10g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{m}\,\left(kg\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1760$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $2200$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{m}\,\left(km/h\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $113.1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $126.5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ requises, utilisant les données du manuel utilisateur du Sora2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Un raisonnement un peu plus élaboré
+\end_layout
+
+\begin_layout Standard
+On sait également que 
+\begin_inset Formula $\frac{C_{x}}{C_{z}}$
+\end_inset
+
+ est l'inverse de la 
+\begin_inset Quotes fld
+\end_inset
+
+finesse soufflerie
+\begin_inset Quotes frd
+\end_inset
+
+, obtenue en excluant la traînée pilote puisque sur le camion, cette traînée
+ n'intervient pas.
+ Elle est plus grande que la finesse du parapente en vol pour lesquels la
+ traînée pilote intervient.
+ La finesse d'un parapente en vol est de l'ordre 
+\begin_inset Formula $10$
+\end_inset
+
+ donc on peut prendre sans risque 
+\begin_inset Formula $\frac{C_{x}}{C_{z}}\sim\frac{1}{10}$
+\end_inset
+
+ (et même plutôt de 
+\begin_inset Formula $\frac{1}{15}$
+\end_inset
+
+).
+ Donc la racine carrée qui intervient dans cette équation est évaluée à
+\begin_inset Formula 
+\[
+\sqrt{1+\left(\frac{C_{x}}{C_{z}}\right)^{2}}\sim1+\frac{1}{2}\left(\frac{C_{x}}{C_{z}}\right)^{2}\sim1.005\sim1
+\]
+
+\end_inset
+
+On obtient donc 
+\begin_inset Formula 
+\begin{equation}
+F\sim\frac{1}{2}\rho SV^{2}C_{z}\label{eq:F-approximative}
+\end{equation}
+
+\end_inset
+
+et 
+\begin_inset Formula 
+\[
+V\sim\sqrt{\frac{2F}{\rho SC_{z}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Evaluons mintenant 
+\begin_inset Formula $C_{z}$
+\end_inset
+
+ : un parapente solo, 
+\begin_inset Formula $S=25\,m^{2}$
+\end_inset
+
+, vole à 
+\begin_inset Formula $V=10\,m/s$
+\end_inset
+
+, avec une charge de 
+\begin_inset Formula $F=1000\,N$
+\end_inset
+
+ donc en utilisant encore l'équation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:F-approximative"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ on obtient 
+\begin_inset Formula 
+\[
+C_{z}\sim\frac{2F}{\rho SV^{2}}\sim0.07
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Numériquement, pour monter un biplace à la charge requise, on utilise les
+ valeurs 
+\begin_inset Formula $C_{z}\sim0.1$
+\end_inset
+
+, 
+\begin_inset Formula $S=42\,m^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\rho=1.2\,kg.m^{-3}$
+\end_inset
+
+ et 
+\begin_inset Formula $F\in\left\{ 17265.6\,N,21582.0\,N\right\} $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $3s>8g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+règle 
+\begin_inset Formula $5\,\text{pics}>10g$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $F_{m}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $17265.6\,N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $21582.0\,kg$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $V_{m}\,\left(km/h\right)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $300.0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $333.2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Vitesses 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ requise.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On constate qu'avec ces deux modes d'évaluation, les vitesses à atteindre
+ sont plus élevées que les vitesses réellement atteintes chez 
+\begin_inset Formula $\ae$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+Il semble donc qu'atteindre un 
+\emph on
+palier
+\emph default
+ stationnaire à 2 tonnes, est 
+\emph on
+largement au dessus
+\emph default
+ des capacités des véhicules utilisés.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Seules les oscillations constatées permettent d'atteindre cet objectif,
+ sur des courtes périodes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette table des vitesses 
+\begin_inset Formula $V>V_{m}$
+\end_inset
+
+ requises est donc à lire avec précaution, et ne constitue que des ordres
+ de grandeur sur-évalués.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5429,7 +5969,7 @@ noprefix "false"
 Reprenant l'équation 
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "eq:F"
+reference "eq:RFA(t)"
 plural "false"
 caps "false"
 noprefix "false"
@@ -5691,7 +6231,7 @@ F_{m}\frac{t_{3}-t}{t_{2}-t_{3}} & \text{ si }t\in\left[t_{2},t_{3}\right]
 La formule 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:F"
+reference "eq:RFA(t)"
 plural "false"
 caps "false"
 noprefix "false"
@@ -5762,7 +6302,7 @@ Et une intégrale première fournit la trajectoire
 \end_inset
 
  et finalement on obtient la distance totale parcourue (pour plus de détails,
- voir la feuille de calcul Maxima
+ voir la feuille de calcul Maxima 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feuille-de-calcul-Maxima-trajectoires"
@@ -5797,8 +6337,20 @@ D=X\left(t_{3}\right)=\frac{V_{m}\left(2t_{3}+t_{2}-t_{1}\right)}{3}\label{eq:di
  
 \end_layout
 
+\begin_layout Subsection
+Evaluation de la vitesse requise 
+\begin_inset Formula $V_{m}$
+\end_inset
+
+ pour atteindre la charge prescrite 
+\begin_inset Formula $F_{m}$
+\end_inset
+
+ en mode oscillatoire
+\end_layout
+
 \begin_layout Subsubsection
-Prise en compte des oscillations (3 paliers)
+Prise en compte des oscillations (3 paliers) 
 \begin_inset Foot
 status collapsed
 
@@ -6076,11 +6628,7 @@ Il est remarquable que cette équation ne dépend en aucune façon ni de la
 \begin_inset Formula $\vinf$
 \end_inset
 
- et de 
-\begin_inset Formula ${\bf F}$
-\end_inset
-
-.
+ .
  
 \end_layout
 
@@ -6136,22 +6684,65 @@ Pour un biplace,
 \end_layout
 
 \begin_layout Subsubsection
-Avec une accélération constante 
-\begin_inset Formula ${\bf a}$
+Avec une accélération 
+\begin_inset Formula ${\bf a}\left(t\right)$
 \end_inset
 
  
 \end_layout
 
 \begin_layout Standard
-Une force d'inertie 
-\begin_inset Formula $F_{i}=-m\a$
+Deux forces d'inertie apparaîssent, qui s'exercent au centre de gravité
+ 
+\begin_inset Formula $G$
 \end_inset
 
- apparaît, qui s'exerce au centre de gravité du parapente (donc à proximité
- de la voilure, à l'intrados).
- La prise en compte de cette force d'inertie amène les termes correctifs
- suivants dans les équations :
+ du parapente (donc à proximité de la voilure, à l'intrados) :
+\end_layout
+
+\begin_layout Itemize
+la force d'inertie d'entraînement 
+\begin_inset Formula $\mathbf{F}_{i}=-m\a$
+\end_inset
+
+ et 
+\end_layout
+
+\begin_layout Itemize
+la force de Coriolis 
+\begin_inset Formula $\mathbf{F}_{c}=-2m\vec{\omega}\wedge\mathbf{v}_{r}$
+\end_inset
+
+ où 
+\begin_inset Formula $\vec{\omega}=\frac{d\alpha}{dt}\mathbf{j}$
+\end_inset
+
+ est le vecteur rotation autour du point d'ancrage, et 
+\begin_inset Formula $\mathbf{v}_{r}=\omega.s.\mathbf{i}_{v}$
+\end_inset
+
+ est la vitesse du point 
+\begin_inset Formula $G$
+\end_inset
+
+ par rapport au point d'ancrage, 
+\begin_inset Formula $s$
+\end_inset
+
+ la longueur du suspentage.
+\end_layout
+
+\begin_layout Standard
+La prise en compte de ces forces amène les termes correctifs suivants dans
+ les équations (le terme 
+\begin_inset Formula $coriolis$
+\end_inset
+
+ est à évaluer, le signe du terme 
+\begin_inset Formula $ma$
+\end_inset
+
+ également) :
 \end_layout
 
 \begin_layout Standard
@@ -6180,15 +6771,15 @@ bC_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alp
 \begin_layout Standard
 \begin_inset Formula 
 \begin{eqnarray*}
-q\vinf^{2}C_{x}-F_{x}+ma & = & 0\\
+qSC_{x}-m\,a-F_{x} & = & 0\\
 q\vinf^{2}C_{z}-F_{z} & = & 0\\
 \begin{array}{c}
-\tilde{l}C_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alpha\right)\left(sC_{x}+c\tilde{l}C_{z}\right)\end{array}-m\sin\left(\alpha\right)c\tilde{l}a & = & 0
+\tilde{l}C_{m}+\sin\left(\alpha\right)\left(c\tilde{l}C_{x}-sC_{z}\right)+\cos\left(\alpha\right)\left(sC_{x}+c\tilde{l}C_{z}\right)\end{array}-m\,\sin\left(\alpha\right)\,c\tilde{l}\,a & +coriolis= & 0
 \end{eqnarray*}
 
 \end_inset
 
-
+Il faut coupler ces équations avec celle du camion...
 \end_layout
 
 \begin_layout Subsection
