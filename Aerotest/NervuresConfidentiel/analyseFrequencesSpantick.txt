@@ -1,0 +1,12 @@
+avec ../analysesignal.py, on détermine la teneur fréquentielle de l'enregistrement test structures Spantick2
+
++---------------+-----------------+----------------+
+| Dt (secondes) | fréquences (Hz) | périodes (sec) |
++---------------|-----------------+----------------+
+|   [20, 30]    |     0.56 Hz     |   1.8 s        |
+|               |                 |                |
+|   [30, 45]    |     0.92 Hz     |   1.09 s       |
+|               |                 |                |
+|   [50, 65]    |     0.99 Hz     |   1.1 s        |
+|               |     1.90 Hz     |   0.53 s       |
++---------------+-----------------+----------------+
